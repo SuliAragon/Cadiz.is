@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
 
 :root {
-  /* Colores — la luz y alma de Cádiz */
-  --bg:           #fdfcf9;   /* Blanco cálido, arena muy clara */
-  --surface:      #ffffff;   /* Blanco puro para tarjetas */
-  --border:       #e2e8f0;   /* slate-200 */
-  --text:         #1e293b;   /* slate-800 */
-  --text-light:   #475569;   /* slate-600 */
-  --muted:        #64748b;   /* slate-500 */
-  --accent:       #0466c8;   /* Azul Atlántico profundo y vibrante */
-  --accent-warm:  #e07a5f;   /* Terracota / Atardecer en la Caleta */
-  --green:        #10b981;   /* emerald-500 */
+  /* Colores — la luz dorada de Cádiz */
+  --bg:           #fdf8f0;   /* Arena muy clara, cálida */
+  --surface:      #ffffff;
+  --border:       #e8e0d5;   /* Borde cálido, no frío */
+  --text:         #1c1917;   /* Casi negro cálido (stone-900) */
+  --text-light:   #57534e;   /* stone-600 */
+  --muted:        #78716c;   /* stone-500 */
+  --accent:       #1254a0;   /* Azul Atlántico, más oscuro y distinto */
+  --accent-warm:  #d4622a;   /* Terracota gaditana, no coral */
+  --accent-gold:  #c9a84c;   /* Luz dorada del atardecer en la Caleta */
+  --green:        #10b981;
   --white:        #ffffff;
 
   /* Tipografía */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-display: 'Lora', Georgia, serif;
+  --font-body:    'Nunito Sans', system-ui, sans-serif;
   --font-ui:      'DM Sans', system-ui, sans-serif;
 
   /* Escala tipográfica */
