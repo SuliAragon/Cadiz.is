@@ -24,6 +24,7 @@ interface Props {
 const { article, lang } = Astro.props;
 const { data } = article;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const imgSrc = data.image ? `${base}${data.image}` : null;
 
 // Use articleSlug from frontmatter if available, else derive from Astro slug (removes lang/ prefix)
 const slugForUrl = data.articleSlug ?? article.slug.replace(/^(es|en|fr)\//, '').replace(/\d{4}-\d{2}-\d{2}-/, '');
@@ -47,8 +48,8 @@ const publishedDate = new Date(data.publishedAt).toLocaleDateString(
 <article class="article-card">
   <a href={articlePath} class="article-card__img-link">
     <div class="article-card__img-wrap">
-      {data.image
-        ? <img src={data.image} alt={data.imageAlt ?? data.title} loading="lazy" />
+      {imgSrc
+        ? <img src={imgSrc} alt={data.imageAlt ?? data.title} loading="lazy" />
         : <div class="article-card__img-placeholder" />
       }
     </div>

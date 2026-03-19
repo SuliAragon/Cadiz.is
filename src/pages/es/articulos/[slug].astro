@@ -17,6 +17,7 @@ const lang = 'es';
 const { article } = Astro.props;
 const { Content } = await article.render();
 const { data } = article;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const categoryName = data.category && data.category in CATEGORIES
   ? CATEGORIES[data.category as keyof typeof CATEGORIES][lang]
@@ -45,7 +46,7 @@ const author = authorsData.authors.find((a) => a.id === data.author);
 
     {data.image && (
       <figure class="article-detail__figure">
-        <img src={data.image} alt={data.imageAlt ?? data.title} loading="lazy" />
+        <img src={`${base}${data.image}`} alt={data.imageAlt ?? data.title} loading="lazy" />
         {data.imageCredit && (
           <figcaption class="article-detail__credit">{data.imageCredit}</figcaption>
         )}
