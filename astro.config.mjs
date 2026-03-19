@@ -5,8 +5,7 @@ import { defineConfig } from 'astro/config';
 // Y en integrations: [sitemap({ i18n: { defaultLocale: 'es', locales: { es: 'es-ES', en: 'en-US', fr: 'fr-FR' } } })]
 
 export default defineConfig({
-  site: 'https://SuliAragon.github.io',
-  base: '/Cadiz.is',
+  site: 'https://cadiz.is',
 
   i18n: {
     defaultLocale: 'es',
