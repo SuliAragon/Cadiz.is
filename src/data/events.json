@@ -1,0 +1,109 @@
+{
+  "lastUpdated": "2026-03-19T08:00:00Z",
+  "events": [
+    {
+      "id": "semana-santa-2026",
+      "slug": "semana-santa-cadiz-2026",
+      "title": {
+        "es": "Semana Santa de Cádiz 2026",
+        "en": "Holy Week in Cádiz 2026",
+        "fr": "Semaine Sainte de Cadix 2026"
+      },
+      "description": {
+        "es": "La Semana Santa gaditana es una de las más emotivas de Andalucía. Pasos, saetas y el olor a incienso que llenan cada rincón del casco histórico.",
+        "en": "Cádiz Holy Week is one of the most moving in Andalusia. Floats, saetas and the smell of incense fill every corner of the old town.",
+        "fr": "La Semaine Sainte de Cadix est l'une des plus émouvantes d'Andalousie. Chars, saetas et odeur d'encens envahissent chaque coin de la vieille ville."
+      },
+      "locationName": {
+        "es": "Casco Histórico de Cádiz",
+        "en": "Cádiz Old Town",
+        "fr": "Vieille ville de Cadix"
+      },
+      "startDate": "2026-03-29",
+      "endDate": "2026-04-05",
+      "startTime": "18:00",
+      "category": "fiestas",
+      "isFeatured": true,
+      "image": "/images/events/semana-santa-2026.webp",
+      "isAiGenerated": false
+    },
+    {
+      "id": "feria-jerez-2026",
+      "slug": "feria-jerez-2026",
+      "title": {
+        "es": "Feria del Caballo de Jerez 2026",
+        "en": "Jerez Horse Fair 2026",
+        "fr": "Foire du Cheval de Jerez 2026"
+      },
+      "description": {
+        "es": "La Feria del Caballo de Jerez, una de las más importantes de España, llena la ciudad de flamenco, caballos y manzanilla.",
+        "en": "The Jerez Horse Fair, one of the most important in Spain, fills the city with flamenco, horses and manzanilla.",
+        "fr": "La Foire du Cheval de Jerez, l'une des plus importantes d'Espagne, remplit la ville de flamenco, de chevaux et de manzanilla."
+      },
+      "locationName": {
+        "es": "Real de la Feria, Jerez de la Frontera",
+        "en": "Fairground, Jerez de la Frontera",
+        "fr": "Champ de foire, Jerez de la Frontera"
+      },
+      "startDate": "2026-05-07",
+      "endDate": "2026-05-14",
+      "startTime": "12:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/feria-jerez-2026.webp",
+      "isAiGenerated": false
+    },
+    {
+      "id": "festival-flamenco-2026",
+      "slug": "festival-flamenco-jerez-2026",
+      "title": {
+        "es": "Festival de Jerez 2026",
+        "en": "Jerez Flamenco Festival 2026",
+        "fr": "Festival de Jerez 2026"
+      },
+      "description": {
+        "es": "El Festival de Jerez es la cita internacional del flamenco más importante del mundo, con actuaciones de los mejores artistas.",
+        "en": "The Jerez Festival is the world's most important international flamenco event, featuring performances by the best artists.",
+        "fr": "Le Festival de Jerez est le plus important événement international de flamenco au monde."
+      },
+      "locationName": {
+        "es": "Jerez de la Frontera",
+        "en": "Jerez de la Frontera",
+        "fr": "Jerez de la Frontera"
+      },
+      "startDate": "2026-02-27",
+      "endDate": "2026-03-15",
+      "startTime": "20:00",
+      "category": "cultura",
+      "isFeatured": false,
+      "image": "/images/events/festival-flamenco-2026.webp",
+      "isAiGenerated": false
+    },
+    {
+      "id": "ruta-atun-2026",
+      "slug": "ruta-del-atun-barbate-2026",
+      "title": {
+        "es": "Ruta del Atún Rojo de Barbate 2026",
+        "en": "Barbate Bluefin Tuna Route 2026",
+        "fr": "Route du Thon Rouge de Barbate 2026"
+      },
+      "description": {
+        "es": "La almadraba de Barbate es uno de los sistemas de pesca más antiguos del mundo. Cada primavera, los restaurantes celebran el mejor atún rojo del Atlántico.",
+        "en": "The Barbate almadraba is one of the oldest fishing systems in the world. Every spring, restaurants celebrate the finest Atlantic bluefin tuna.",
+        "fr": "L'almadraba de Barbate est l'un des systèmes de pêche les plus anciens du monde."
+      },
+      "locationName": {
+        "es": "Barbate, Cádiz",
+        "en": "Barbate, Cádiz",
+        "fr": "Barbate, Cadix"
+      },
+      "startDate": "2026-04-15",
+      "endDate": "2026-06-15",
+      "startTime": null,
+      "category": "gastronomia",
+      "isFeatured": false,
+      "image": "/images/events/ruta-atun-2026.webp",
+      "isAiGenerated": false
+    }
+  ]
+}

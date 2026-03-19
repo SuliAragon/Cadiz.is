@@ -1,0 +1,36 @@
+---
+import { type Lang } from '../../i18n/index';
+
+interface Place {
+  id: string;
+  slug: string;
+  name: Record<string, string>;
+  description: Record<string, string>;
+  type: string;
+  image?: string;
+  isFeatured?: boolean;
+}
+
+interface Props {
+  place: Place;
+  lang: Lang;
+}
+
+const { place, lang } = Astro.props;
+const name = place.name[lang] ?? place.name.es ?? '';
+const description = place.description[lang] ?? place.description.es ?? '';
+const shortDesc = description.length > 140 ? description.substring(0, 140) + '…' : description;
+---
+
+<div class="place-card">
+  {place.image && (
+    <div class="place-card__img">
+      <img src={place.image} alt={name} loading="lazy" />
+    </div>
+  )}
+  <div class="place-card__body">
+    <span class="place-card__type">{place.type}</span>
+    <h3 class="place-card__title">{name}</h3>
+    {shortDesc && <p class="place-card__desc">{shortDesc}</p>}
+  </div>
+</div>

@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EventFeatured from '../../components/events/EventFeatured.astro';
+import EventCard from '../../components/events/EventCard.astro';
+import { t } from '../../i18n/index';
+import eventsData from '../../data/events.json';
+
+const lang = 'fr';
+const now = new Date();
+const upcoming = eventsData.events
+  .filter((e) => new Date(e.endDate ?? e.startDate) >= now)
+  .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime());
+
+const [nearest, ...rest] = upcoming;
+---
+
+<BaseLayout lang={lang} title={t(lang, 'agenda.title')}>
+  <div class="agenda-page container section">
+    <h1 class="page-title">{t(lang, 'agenda.title')}</h1>
+    {upcoming.length === 0 ? (
+      <p class="empty-msg">{t(lang, 'agenda.no_events')}</p>
+    ) : (
+      <>
+        {nearest && <EventFeatured event={nearest} lang={lang} />}
+        {rest.length > 0 && (
+          <div class="events-grid">
+            {rest.map((event) => <EventCard event={event} lang={lang} />)}
+          </div>
+        )}
+      </>
+    )}
+  </div>
+</BaseLayout>

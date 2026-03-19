@@ -1,0 +1,66 @@
+---
+import Badge from '../ui/Badge.astro';
+import { CATEGORIES, type Lang } from '../../i18n/index';
+
+interface Props {
+  article: {
+    slug: string;
+    data: {
+      title: string;
+      excerpt: string;
+      category: string;
+      author: string;
+      publishedAt: string;
+      image?: string;
+      imageAlt?: string;
+      isAiGenerated?: boolean;
+      isFeatured?: boolean;
+      articleSlug?: string;
+    };
+  };
+  lang: Lang;
+}
+
+const { article, lang } = Astro.props;
+const { data } = article;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Use articleSlug from frontmatter if available, else derive from Astro slug (removes lang/ prefix)
+const slugForUrl = data.articleSlug ?? article.slug.replace(/^(es|en|fr)\//, '').replace(/\d{4}-\d{2}-\d{2}-/, '');
+
+const articlePath = lang === 'en'
+  ? `${base}/${lang}/articles/${slugForUrl}/`
+  : lang === 'fr'
+    ? `${base}/${lang}/articles/${slugForUrl}/`
+    : `${base}/${lang}/articulos/${slugForUrl}/`;
+
+const categoryLabel = data.category in CATEGORIES
+  ? CATEGORIES[data.category as keyof typeof CATEGORIES][lang]
+  : data.category;
+
+const publishedDate = new Date(data.publishedAt).toLocaleDateString(
+  lang === 'en' ? 'en-US' : lang === 'fr' ? 'fr-FR' : 'es-ES',
+  { day: 'numeric', month: 'short', year: 'numeric' }
+);
+---
+
+<article class="article-card">
+  <a href={articlePath} class="article-card__img-link">
+    <div class="article-card__img-wrap">
+      {data.image
+        ? <img src={data.image} alt={data.imageAlt ?? data.title} loading="lazy" />
+        : <div class="article-card__img-placeholder" />
+      }
+    </div>
+  </a>
+
+  <div class="article-card__body">
+    <div class="article-card__meta-text">
+      <Badge category={data.category} label={categoryLabel} />
+      <span style="margin-left: 8px; font-weight:400;">{publishedDate}</span>
+    </div>
+    <h3 class="article-card__title">
+      <a href={articlePath}>{data.title}</a>
+    </h3>
+  </div>
+</article>

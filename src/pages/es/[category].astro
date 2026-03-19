@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleGrid from '../../components/articles/ArticleGrid.astro';
+import { t, CATEGORIES } from '../../i18n/index';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return Object.keys(CATEGORIES).map((cat) => ({ params: { category: cat } }));
+}
+
+const lang = 'es';
+const { category } = Astro.params;
+
+const allArticles = await getCollection('articles', (entry) =>
+  entry.id.startsWith('es/') && entry.data.category === category
+);
+const articles = allArticles.sort(
+  (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
+
+const categoryName = category && category in CATEGORIES
+  ? CATEGORIES[category as keyof typeof CATEGORIES][lang]
+  : category ?? '';
+---
+
+<BaseLayout lang={lang} title={categoryName}>
+  <section class="container section">
+    <h1 class="page-title">{categoryName}</h1>
+    {articles.length > 0
+      ? <ArticleGrid articles={articles} lang={lang} />
+      : <p class="empty-msg">{t(lang, 'category.no_articles')}</p>
+    }
+  </section>
+</BaseLayout>

@@ -1,0 +1,114 @@
+{
+  "authors": [
+    {
+      "id": "rocio-fernandez",
+      "name": "Rocío Fernández",
+      "bio": {
+        "es": "Gaditana de pura cepa, periodista y amante del carnaval. Lleva 15 años contando Cádiz desde dentro.",
+        "en": "Born and bred in Cádiz, journalist and carnival enthusiast. 15 years telling Cádiz from the inside.",
+        "fr": "Gaditane de pure souche, journaliste et passionnée de carnaval. 15 ans à raconter Cadix de l'intérieur."
+      },
+      "avatar": "/images/authors/rocio-fernandez.webp",
+      "specialty": "fiestas"
+    },
+    {
+      "id": "antonio-garcia",
+      "name": "Antonio García",
+      "bio": {
+        "es": "Guía turístico certificado y fotógrafo. Su misión: que cada visitante se enamore de Cádiz.",
+        "en": "Certified tour guide and photographer. His mission: make every visitor fall in love with Cádiz.",
+        "fr": "Guide touristique certifié et photographe. Sa mission : faire tomber amoureux chaque visiteur de Cadix."
+      },
+      "avatar": "/images/authors/antonio-garcia.webp",
+      "specialty": "turismo"
+    },
+    {
+      "id": "carmen-ruiz",
+      "name": "Carmen Ruiz",
+      "bio": {
+        "es": "Chef y escritora gastronómica. Rescata recetas de la abuela y descubre los mejores chiringuitos.",
+        "en": "Chef and food writer. She rescues grandma's recipes and discovers the best beach bars.",
+        "fr": "Cheffe et chroniqueuse gastronomique. Elle remet au goût du jour les recettes de grand-mère."
+      },
+      "avatar": "/images/authors/carmen-ruiz.webp",
+      "specialty": "gastronomia"
+    },
+    {
+      "id": "jose-morales",
+      "name": "José Morales",
+      "bio": {
+        "es": "Historiador y escritor. Especialista en la Cádiz romana, fenicia y contemporánea.",
+        "en": "Historian and writer. Specialist in Roman, Phoenician and contemporary Cádiz.",
+        "fr": "Historien et écrivain. Spécialiste de Cadix romaine, phénicienne et contemporaine."
+      },
+      "avatar": "/images/authors/jose-morales.webp",
+      "specialty": "cultura"
+    },
+    {
+      "id": "ana-sanchez",
+      "name": "Ana Sánchez",
+      "bio": {
+        "es": "Bloguera de viajes y cofundadora de Cádiz Secreta. Conoce cada rincón de la provincia.",
+        "en": "Travel blogger and co-founder of Cádiz Secreta. She knows every corner of the province.",
+        "fr": "Blogueuse voyage et co-fondatrice de Cádiz Secreta. Elle connaît chaque recoin de la province."
+      },
+      "avatar": "/images/authors/ana-sanchez.webp",
+      "specialty": "turismo"
+    },
+    {
+      "id": "pablo-jimenez",
+      "name": "Pablo Jiménez",
+      "bio": {
+        "es": "Músico y periodista cultural. Cubre festivales, flamenco y la escena artística gaditana.",
+        "en": "Musician and cultural journalist. Covers festivals, flamenco and the Cádiz art scene.",
+        "fr": "Musicien et journaliste culturel. Il couvre les festivals, le flamenco et la scène artistique gaditane."
+      },
+      "avatar": "/images/authors/pablo-jimenez.webp",
+      "specialty": "cultura"
+    },
+    {
+      "id": "lucia-vega",
+      "name": "Lucía Vega",
+      "bio": {
+        "es": "Sumiller y experta en vinos de la tierra. Del manzanilla al fino, Cádiz en copa.",
+        "en": "Sommelier and local wine expert. From manzanilla to fino, Cádiz in a glass.",
+        "fr": "Sommelière et experte en vins locaux. Du manzanilla au fino, Cadix dans un verre."
+      },
+      "avatar": "/images/authors/lucia-vega.webp",
+      "specialty": "gastronomia"
+    },
+    {
+      "id": "miguel-torres",
+      "name": "Miguel Torres",
+      "bio": {
+        "es": "Surfero y amante del litoral. Conoce cada playa de la costa gaditana como la palma de su mano.",
+        "en": "Surfer and coastal enthusiast. He knows every beach of the Cádiz coast like the back of his hand.",
+        "fr": "Surfeur et amoureux du littoral. Il connaît chaque plage de la côte gaditane sur le bout des doigts."
+      },
+      "avatar": "/images/authors/miguel-torres.webp",
+      "specialty": "turismo"
+    },
+    {
+      "id": "isabel-leon",
+      "name": "Isabel León",
+      "bio": {
+        "es": "Fotógrafa documental y cronista social. Captura la Cádiz de la gente de a pie.",
+        "en": "Documentary photographer and social chronicler. She captures the Cádiz of everyday people.",
+        "fr": "Photographe documentaire et chroniqueuse sociale. Elle capture le Cadix du quotidien."
+      },
+      "avatar": "/images/authors/isabel-leon.webp",
+      "specialty": "cultura"
+    },
+    {
+      "id": "david-castillo",
+      "name": "David Castillo",
+      "bio": {
+        "es": "Chef de cocina gaditana moderna. Fusiona tradición y vanguardia sin perder la esencia del mar.",
+        "en": "Modern Cádiz cuisine chef. He fuses tradition and avant-garde without losing the essence of the sea.",
+        "fr": "Chef de cuisine gaditane moderne. Il fusionne tradition et avant-garde sans perdre l'essence de la mer."
+      },
+      "avatar": "/images/authors/david-castillo.webp",
+      "specialty": "gastronomia"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "site_name": "cadiz.is",
+    "site_description": "Historias, guías y planes sobre Cádiz para locales y viajeros."
+  },
+  "nav": {
+    "festivals": "Fiestas",
+    "tourism": "Turismo",
+    "gastronomy": "Gastronomía",
+    "culture": "Cultura",
+    "agenda": "Agenda",
+    "places": "Lugares"
+  },
+  "footer": {
+    "tagline": "La luz de Cádiz, contada cada día.",
+    "rights": "Todos los derechos reservados"
+  },
+  "home": {
+    "title": "Bienvenido a cadiz.is",
+    "lead": "Historias, guías y planes para vivir Cádiz.",
+    "subtitle": "Empieza aquí",
+    "desc": "Si es tu primera vez, o quieres vivir Cádiz como se merece.",
+    "latest_title": "Lo último",
+    "quiz": "¿Eres Gadita o Beduino?",
+    "quiz_action": "Haz el test >",
+    "hero_words": ["viva", "alegre", "salada", "luminosa", "eterna", "mágica", "infinita"]
+  },
+  "places": {
+    "desc": "Los enclaves imprescindibles de nuestra tierra."
+  },
+  "article": {
+    "ai_generated": "Artículo generado por IA",
+    "views": "lecturas",
+    "guide": "Guía",
+    "written_by": "Escrito por",
+    "read_more": "Leer más"
+  },
+  "agenda": {
+    "title": "Agenda de eventos",
+    "no_events": "No hay eventos próximos"
+  },
+  "category": {
+    "no_articles": "No hay artículos en esta categoría"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal"
+  },
+  "quiz": {
+    "eyebrow": "El test definitivo",
+    "title": "¿Eres Gadita o Beduino?",
+    "lead": "Demuestra cuánto sabes sobre la ciudad más antigua de Occidente con estas 10 preguntas clave.",
+    "meta_title": "Test — ¿Eres Gadita o Beduino?",
+    "progress": "Pregunta {current} de {total}",
+    "confirm": "Confirmar respuesta",
+    "next": "Siguiente pregunta",
+    "finish": "Ver resultado final",
+    "feedback_correct": "¡Correcto! ✨",
+    "feedback_wrong": "Vaya, no era... 😔",
+    "result_eyebrow": "Resultado final",
+    "result_high": "¡Eres un auténtico Gadita! 🐟",
+    "result_mid": "Ni tan mal, vas por buen camino",
+    "result_low": "Vaya… pareces un poco Beduino 🐪",
+    "result_text": "Has respondido correctamente a {score} de las {total} preguntas sobre la Tacita de Plata.",
+    "retry": "Intentar de nuevo",
+    "back_home": "Volver al inicio",
+    "summary_title": "Resumen de tus respuestas",
+    "correct": "Correcta",
+    "wrong": "Incorrecta",
+    "your_answer": "Tu respuesta: {answer}"
+  }
+}

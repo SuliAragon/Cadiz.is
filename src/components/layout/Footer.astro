@@ -1,0 +1,36 @@
+---
+import { t, type Lang } from '../../i18n/index';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const year = new Date().getFullYear();
+
+const navLinks = [
+  { key: 'nav.festivals',  path: `${base}/${lang}/fiestas` },
+  { key: 'nav.tourism',    path: `${base}/${lang}/turismo` },
+  { key: 'nav.gastronomy', path: `${base}/${lang}/gastronomia` },
+  { key: 'nav.agenda',     path: `${base}/${lang}/agenda` },
+  { key: 'nav.places',     path: `${base}/${lang}/${lang === 'fr' ? 'lieux' : lang === 'en' ? 'places' : 'lugares'}` },
+];
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">cadiz<em>.is</em></span>
+      <p class="footer__tagline">{t(lang, 'footer.tagline')}</p>
+    </div>
+    <nav class="footer__nav">
+      {navLinks.map(({ key, path }) => (
+        <a href={path}>{t(lang, key)}</a>
+      ))}
+    </nav>
+    <p class="footer__copy">
+      © {year} cadiz.is — {t(lang, 'footer.rights')}
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,30 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import { type Lang } from '../../i18n/index';
+
+interface Props {
+  articles: Array<{
+    slug: string;
+    data: {
+      title: string;
+      excerpt: string;
+      category: string;
+      author: string;
+      publishedAt: string;
+      image?: string;
+      imageAlt?: string;
+      isAiGenerated?: boolean;
+      isFeatured?: boolean;
+    };
+  }>;
+  lang: Lang;
+}
+
+const { articles, lang } = Astro.props;
+---
+
+<div class="articles-grid">
+  {articles.map((article) => (
+    <ArticleCard article={article} lang={lang} />
+  ))}
+</div>

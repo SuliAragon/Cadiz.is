@@ -1,0 +1,9 @@
+---
+import { t, type Lang } from '../../i18n/index';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+---
+<span class="ai-badge">
+  <span class="ai-badge__dot"></span>
+  {t(lang, 'article.ai_generated')}
+</span>

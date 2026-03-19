@@ -1,0 +1,73 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { t, type Lang } from '../../i18n/index';
+
+interface Props {
+  lang: Lang;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const navLinks = [
+  { key: 'nav.festivals',  path: `${base}/${lang}/fiestas` },
+  { key: 'nav.tourism',    path: `${base}/${lang}/turismo` },
+  { key: 'nav.gastronomy', path: `${base}/${lang}/gastronomia` },
+  { key: 'nav.culture',    path: `${base}/${lang}/cultura` },
+  { key: 'nav.agenda',     path: `${base}/${lang}/agenda` },
+  { key: 'nav.places',     path: `${base}/${lang}/${lang === 'fr' ? 'lieux' : lang === 'en' ? 'places' : 'lugares'}` },
+];
+---
+
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href={`${base}/${lang}/`} class="navbar__logo">
+      cadiz<span>.is</span>
+    </a>
+
+    <nav class="navbar__nav" aria-label="Navegación principal">
+      {navLinks.map(({ key, path }) => (
+        <a
+          href={path}
+          class={`navbar__link${currentPath.includes(path.replace(`${base}/${lang}`, '')) && path !== `${base}/${lang}/` ? ' active' : ''}`}
+        >
+          {t(lang, key)}
+        </a>
+      ))}
+    </nav>
+
+    <div class="navbar__actions">
+      <LanguageSwitcher lang={lang} currentPath={currentPath} />
+      <button
+        class="navbar__mobile-toggle"
+        id="mobile-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Menú móvil" style="display:none">
+    {navLinks.map(({ key, path }) => (
+      <a href={path} class="navbar__link">{t(lang, key)}</a>
+    ))}
+    <LanguageSwitcher lang={lang} currentPath={currentPath} />
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.style.display !== 'none';
+      menu.style.display = isOpen ? 'none' : 'flex';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle.textContent = isOpen ? '☰' : '✕';
+    });
+  }
+</script>

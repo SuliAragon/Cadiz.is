@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/index';
+import quizQuestions from '../../i18n/quizQuestions';
+
+const lang = 'es';
+const questions = quizQuestions[lang];
+const questionsJson = JSON.stringify(questions);
+---
+
+<BaseLayout lang={lang} title={t(lang, 'quiz.title')}>
+  <div class="quiz-page">
+    <div class="quiz-hero">
+      <span class="quiz-hero__eyebrow">{t(lang, 'quiz.eyebrow')}</span>
+      <h1 class="quiz-hero__title">{t(lang, 'quiz.title')}</h1>
+      <p class="quiz-hero__lead">{t(lang, 'quiz.lead')}</p>
+    </div>
+
+    <div class="quiz-shell" id="quiz-app">
+      <!-- Quiz will be rendered here by JS -->
+      <div id="quiz-loading" style="text-align:center;padding:2rem;color:var(--muted)">
+        {t(lang, 'common.loading')}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ questionsJson, lang,
+  txt_progress: t(lang, 'quiz.progress'),
+  txt_confirm: t(lang, 'quiz.confirm'),
+  txt_next: t(lang, 'quiz.next'),
+  txt_finish: t(lang, 'quiz.finish'),
+  txt_feedback_correct: t(lang, 'quiz.feedback_correct'),
+  txt_feedback_wrong: t(lang, 'quiz.feedback_wrong'),
+  txt_result_eyebrow: t(lang, 'quiz.result_eyebrow'),
+  txt_result_high: t(lang, 'quiz.result_high'),
+  txt_result_mid: t(lang, 'quiz.result_mid'),
+  txt_result_low: t(lang, 'quiz.result_low'),
+  txt_result_text: t(lang, 'quiz.result_text'),
+  txt_retry: t(lang, 'quiz.retry'),
+  txt_back_home: t(lang, 'quiz.back_home'),
+  txt_summary_title: t(lang, 'quiz.summary_title'),
+  txt_correct: t(lang, 'quiz.correct'),
+  txt_wrong: t(lang, 'quiz.wrong'),
+  txt_your_answer: t(lang, 'quiz.your_answer'),
+  base: import.meta.env.BASE_URL
+}}>
+  const questions = JSON.parse(questionsJson);
+  let currentQ = 0;
+  let selectedOption = null;
+  let confirmed = false;
+  let score = 0;
+  const answers = [];
+
+  const app = document.getElementById('quiz-app');
+  document.getElementById('quiz-loading')?.remove();
+
+  function render() {
+    if (currentQ >= questions.length) {
+      renderResult();
+      return;
+    }
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    const total = questions.length;
+    const progressPct = ((currentQ) / total) * 100;
+    const progressLabel = txt_progress
+      .replace('{current}', String(currentQ + 1))
+      .replace('{total}', String(total));
+
+    app.innerHTML = `
+      <div class="quiz-progress">
+        <span class="quiz-progress__label">${progressLabel}</span>
+        <div class="quiz-progress__bar"><span style="width:${progressPct}%"></span></div>
+      </div>
+      <div class="quiz-card">
+        <p class="quiz-card__question">${q.question}</p>
+        <div class="quiz-card__options">
+          ${q.options.map((opt) => `
+            <button class="quiz-option${selectedOption === opt.id ? ' is-selected' : ''}${confirmed && opt.isCorrect ? ' is-correct' : ''}${confirmed && selectedOption === opt.id && !opt.isCorrect ? ' is-wrong' : ''}"
+              data-id="${opt.id}"
+              ${confirmed ? 'disabled' : ''}
+            >
+              <span class="quiz-option__letter">${opt.id}</span>
+              <span>${opt.text}</span>
+            </button>
+          `).join('')}
+        </div>
+        ${confirmed ? `
+          <div class="quiz-feedback ${selectedOption && q.options.find(o => o.id === selectedOption)?.isCorrect ? 'is-correct' : 'is-wrong'}">
+            <p class="quiz-feedback__title">${selectedOption && q.options.find(o => o.id === selectedOption)?.isCorrect ? txt_feedback_correct : txt_feedback_wrong}</p>
+            <div class="quiz-feedback__body"><p>${q.explanation}</p></div>
+          </div>
+        ` : ''}
+        <div class="quiz-nav">
+          ${!confirmed
+            ? `<button class="quiz-nav__btn" id="btn-confirm" ${!selectedOption ? 'disabled' : ''}>${txt_confirm}</button>`
+            : currentQ < questions.length - 1
+              ? `<button class="quiz-nav__btn" id="btn-next">${txt_next}</button>`
+              : `<button class="quiz-nav__btn" id="btn-finish">${txt_finish}</button>`
+          }
+        </div>
+      </div>
+    `;
+
+    // Attach option click
+    app.querySelectorAll('.quiz-option').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (confirmed) return;
+        selectedOption = btn.dataset.id;
+        render();
+      });
+    });
+
+    // Confirm
+    document.getElementById('btn-confirm')?.addEventListener('click', () => {
+      if (!selectedOption) return;
+      confirmed = true;
+      const q = questions[currentQ];
+      const correct = q.options.find(o => o.id === selectedOption)?.isCorrect ?? false;
+      if (correct) score++;
+      answers.push({ question: q.question, selectedOption, correct, explanation: q.explanation, options: q.options });
+      render();
+    });
+
+    // Next
+    document.getElementById('btn-next')?.addEventListener('click', () => {
+      currentQ++;
+      selectedOption = null;
+      confirmed = false;
+      render();
+    });
+
+    // Finish
+    document.getElementById('btn-finish')?.addEventListener('click', () => {
+      currentQ++;
+      render();
+    });
+  }
+
+  function renderResult() {
+    const total = questions.length;
+    const pct = score / total;
+    const resultTitle = pct >= 0.8 ? txt_result_high : pct >= 0.5 ? txt_result_mid : txt_result_low;
+    const resultText = txt_result_text.replace('{score}', String(score)).replace('{total}', String(total));
+    const baseClean = base.replace(/\/$/, '');
+
+    app.innerHTML = `
+      <div class="quiz-result">
+        <div class="quiz-result__score">
+          <div class="quiz-result__meter">
+            <span class="quiz-result__number">${score}</span>
+            <span class="quiz-result__total">/${total}</span>
+          </div>
+          <h2>${resultTitle}</h2>
+          <p>${resultText}</p>
+        </div>
+        <div class="quiz-result__actions">
+          <button class="quiz-nav__btn ghost" id="btn-retry">${txt_retry}</button>
+          <a class="quiz-nav__btn" href="${baseClean}/${lang}/">${txt_back_home}</a>
+        </div>
+      </div>
+
+      <div class="quiz-summary" style="margin-top:2rem">
+        <h3>${txt_summary_title}</h3>
+        ${answers.map((a, i) => `
+          <div class="quiz-summary__item">
+            <div class="quiz-summary__head">
+              <span class="quiz-summary__badge ${a.correct ? 'is-correct' : 'is-wrong'}">
+                ${a.correct ? txt_correct : txt_wrong}
+              </span>
+              <strong>${i + 1}. ${a.question}</strong>
+            </div>
+            <p class="quiz-summary__answer">${txt_your_answer.replace('{answer}', a.options.find(o => o.id === a.selectedOption)?.text ?? '')}</p>
+            <div class="quiz-summary__explain"><p>${a.explanation}</p></div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    document.getElementById('btn-retry')?.addEventListener('click', () => {
+      currentQ = 0;
+      selectedOption = null;
+      confirmed = false;
+      score = 0;
+      answers.length = 0;
+      render();
+    });
+  }
+
+  render();
+</script>

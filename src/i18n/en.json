@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "site_name": "cadiz.is",
+    "site_description": "Stories, guides and plans about Cádiz for locals and visitors."
+  },
+  "nav": {
+    "festivals": "Festivals",
+    "tourism": "Tourism",
+    "gastronomy": "Food",
+    "culture": "Culture",
+    "agenda": "Events",
+    "places": "Places"
+  },
+  "footer": {
+    "tagline": "The light of Cádiz, in every story.",
+    "rights": "All rights reserved"
+  },
+  "home": {
+    "title": "Welcome to cadiz.is",
+    "lead": "Stories, guides and plans to enjoy Cádiz.",
+    "subtitle": "Start here",
+    "desc": "If it's your first time, or you want Cádiz done right.",
+    "latest_title": "Latest",
+    "quiz": "Local or first-timer?",
+    "quiz_action": "Take the test >",
+    "hero_words": ["alive", "joyful", "salty", "bright", "eternal", "magical", "infinite"]
+  },
+  "places": {
+    "desc": "The must-see spots of the city."
+  },
+  "article": {
+    "ai_generated": "AI generated article",
+    "views": "views",
+    "guide": "Guide",
+    "written_by": "Written by",
+    "read_more": "Read more"
+  },
+  "agenda": {
+    "title": "Events",
+    "no_events": "No upcoming events"
+  },
+  "category": {
+    "no_articles": "No articles found in this category"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  },
+  "quiz": {
+    "eyebrow": "The definitive test",
+    "title": "Gadita or Beduino?",
+    "lead": "How well do you know the oldest city in the Western world? Find out with these 10 questions.",
+    "meta_title": "Quiz — Gadita or Beduino?",
+    "progress": "Question {current} of {total}",
+    "confirm": "Confirm answer",
+    "next": "Next question",
+    "finish": "See final result",
+    "feedback_correct": "Correct! ✨",
+    "feedback_wrong": "Not quite... 😔",
+    "result_eyebrow": "Final result",
+    "result_high": "You're a true Gadita! 🐟",
+    "result_mid": "Not bad — you're on the right track",
+    "result_low": "Looks like you might be a Beduino 🐪",
+    "result_text": "You answered {score} out of {total} questions about the Tacita de Plata correctly.",
+    "retry": "Try again",
+    "back_home": "Back to home",
+    "summary_title": "Summary of your answers",
+    "correct": "Correct",
+    "wrong": "Incorrect",
+    "your_answer": "Your answer: {answer}"
+  }
+}

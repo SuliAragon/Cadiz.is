@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "site_name": "cadiz.is",
+    "site_description": "Histoires, guides et plans sur Cadix pour locaux et voyageurs."
+  },
+  "nav": {
+    "festivals": "Fêtes",
+    "tourism": "Tourisme",
+    "gastronomy": "Gastronomie",
+    "culture": "Culture",
+    "agenda": "Agenda",
+    "places": "Lieux"
+  },
+  "footer": {
+    "tagline": "La lumière de Cadix, racontée chaque jour.",
+    "rights": "Tous droits réservés"
+  },
+  "home": {
+    "title": "Bienvenue sur cadiz.is",
+    "lead": "Histoires, guides et plans pour vivre Cadix.",
+    "subtitle": "Commencez ici",
+    "desc": "Si c'est votre première fois, ou si vous voulez vivre Cadix comme il se doit.",
+    "latest_title": "Derniers articles",
+    "quiz": "Local ou touriste ?",
+    "quiz_action": "Faites le test >",
+    "hero_words": ["vivante", "joyeuse", "salée", "lumineuse", "éternelle", "magique", "infinie"]
+  },
+  "places": {
+    "desc": "Les incontournables de la ville."
+  },
+  "article": {
+    "ai_generated": "Article généré par IA",
+    "views": "lectures",
+    "guide": "Guide",
+    "written_by": "Écrit par",
+    "read_more": "Lire la suite"
+  },
+  "agenda": {
+    "title": "Agenda",
+    "no_events": "Pas d'événements à venir"
+  },
+  "category": {
+    "no_articles": "Aucun article dans cette catégorie"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue"
+  },
+  "quiz": {
+    "eyebrow": "Le test définitif",
+    "title": "Gadita ou Beduino ?",
+    "lead": "Combien connaissez-vous la plus ancienne ville d'Occident ? Découvrez-le avec ces 10 questions.",
+    "meta_title": "Quiz — Gadita ou Beduino ?",
+    "progress": "Question {current} sur {total}",
+    "confirm": "Confirmer la réponse",
+    "next": "Question suivante",
+    "finish": "Voir le résultat final",
+    "feedback_correct": "Correct ! ✨",
+    "feedback_wrong": "Pas tout à fait... 😔",
+    "result_eyebrow": "Résultat final",
+    "result_high": "Tu es un vrai Gadita ! 🐟",
+    "result_mid": "Pas mal — tu es sur la bonne voie",
+    "result_low": "On dirait que tu es plutôt Beduino 🐪",
+    "result_text": "Tu as répondu correctement à {score} des {total} questions sur la Tacita de Plata.",
+    "retry": "Réessayer",
+    "back_home": "Retour à l'accueil",
+    "summary_title": "Récapitulatif de vos réponses",
+    "correct": "Correcte",
+    "wrong": "Incorrecte",
+    "your_answer": "Votre réponse : {answer}"
+  }
+}

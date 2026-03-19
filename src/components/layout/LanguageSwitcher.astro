@@ -1,0 +1,43 @@
+---
+import { type Lang } from '../../i18n/index';
+
+interface Props {
+  lang: Lang;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function switchLang(targetLang: Lang): string {
+  // Replace language segment in path
+  const langs: Lang[] = ['es', 'en', 'fr'];
+  let path = currentPath;
+  for (const l of langs) {
+    if (path.includes(`/${l}/`) || path.endsWith(`/${l}`)) {
+      path = path.replace(`/${l}`, `/${targetLang}`);
+      return path;
+    }
+  }
+  return `${base}/${targetLang}/`;
+}
+
+const langs: { code: Lang; label: string }[] = [
+  { code: 'es', label: 'ES' },
+  { code: 'en', label: 'EN' },
+  { code: 'fr', label: 'FR' },
+];
+---
+
+<div class="lang-switcher">
+  {langs.map(({ code, label }) => (
+    <a
+      href={switchLang(code)}
+      class={`lang-switcher__btn${lang === code ? ' active' : ''}`}
+      aria-label={`Cambiar a ${label}`}
+      aria-current={lang === code ? 'true' : undefined}
+    >
+      {label}
+    </a>
+  ))}
+</div>

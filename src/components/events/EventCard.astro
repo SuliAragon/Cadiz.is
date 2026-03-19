@@ -1,0 +1,83 @@
+---
+import Badge from '../ui/Badge.astro';
+import { CATEGORIES, type Lang } from '../../i18n/index';
+
+interface Event {
+  id: string;
+  slug: string;
+  title: Record<string, string>;
+  description: Record<string, string>;
+  locationName?: Record<string, string>;
+  startDate: string;
+  endDate?: string;
+  startTime?: string | null;
+  category: string;
+  isFeatured?: boolean;
+  image?: string;
+}
+
+interface Props {
+  event: Event;
+  lang: Lang;
+}
+
+const { event, lang } = Astro.props;
+
+const title = event.title[lang] ?? event.title.es ?? '';
+const description = event.description[lang] ?? event.description.es ?? '';
+const locationName = event.locationName?.[lang] ?? event.locationName?.es ?? '';
+const categoryLabel = event.category in CATEGORIES
+  ? CATEGORIES[event.category as keyof typeof CATEGORIES][lang]
+  : event.category;
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr + 'T12:00:00').toLocaleDateString(
+    lang === 'en' ? 'en-US' : lang === 'fr' ? 'fr-FR' : 'es-ES',
+    { day: 'numeric', month: 'short', year: 'numeric' }
+  );
+}
+
+function daysUntil(dateStr: string): number {
+  const now = new Date();
+  const target = new Date(dateStr + 'T12:00:00');
+  return Math.ceil((target.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+}
+
+const days = daysUntil(event.startDate);
+const dateRange = event.endDate
+  ? `${formatDate(event.startDate)} — ${formatDate(event.endDate)}`
+  : formatDate(event.startDate);
+
+const countdownLabel = {
+  es: days <= 0 ? 'En curso' : days === 1 ? 'Mañana' : `En ${days} días`,
+  en: days <= 0 ? 'Ongoing' : days === 1 ? 'Tomorrow' : `In ${days} days`,
+  fr: days <= 0 ? 'En cours' : days === 1 ? 'Demain' : `Dans ${days} jours`,
+}[lang];
+---
+
+<div class="event-card">
+  {event.image && (
+    <div class="event-card__img">
+      <img src={event.image} alt={title} loading="lazy" />
+    </div>
+  )}
+  <div class="event-card__body">
+    <div class="event-card__top">
+      <Badge category={event.category} label={categoryLabel} />
+      <span class={`event-countdown${days <= 7 && days >= 0 ? ' event-countdown--urgent' : ''}`}>
+        {countdownLabel}
+      </span>
+    </div>
+    <h3 class="event-card__title">{title}</h3>
+    <div class="event-card__meta">
+      <span class="event-meta__item">📅 {dateRange}</span>
+      {event.startTime && (
+        <span class="event-meta__item">🕐 {event.startTime.substring(0, 5)}</span>
+      )}
+      {locationName && (
+        <span class="event-meta__item">📍 {locationName}</span>
+      )}
+    </div>
+    {description && <p class="event-card__desc">{description}</p>}
+  </div>
+</div>
