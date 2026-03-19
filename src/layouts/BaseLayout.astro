@@ -9,7 +9,7 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
-  lang?: 'es' | 'en' | 'fr';
+  lang?: 'es' | 'en';
 }
 
 const { title, description, image, lang: langProp } = Astro.props;
@@ -19,7 +19,6 @@ const defaultTitle = 'cadiz.is';
 const defaultDescription = {
   es: 'Historias, guías y planes sobre Cádiz para locales y viajeros.',
   en: 'Stories, guides and plans about Cádiz for locals and visitors.',
-  fr: 'Histoires, guides et plans sur Cadix pour locaux et voyageurs.',
 }[lang];
 
 const pageTitle = title ? `${title} — cadiz.is` : defaultTitle;
@@ -58,7 +57,6 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/images/og-default.web
     <!-- Alternate languages -->
     <link rel="alternate" hreflang="es" href={Astro.url.href.replace(`/${lang}/`, '/es/')} />
     <link rel="alternate" hreflang="en" href={Astro.url.href.replace(`/${lang}/`, '/en/')} />
-    <link rel="alternate" hreflang="fr" href={Astro.url.href.replace(`/${lang}/`, '/fr/')} />
   </head>
   <body>
     <Navbar lang={lang} currentPath={Astro.url.pathname} />

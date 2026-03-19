@@ -1,19 +1,17 @@
 {
-  "lastUpdated": "2026-03-19T08:00:00Z",
+  "lastUpdated": "2026-03-20T08:00:00Z",
   "places": [
     {
       "id": "playa-la-caleta",
       "slug": "playa-la-caleta",
-      "name": { "es": "Playa La Caleta", "en": "La Caleta Beach", "fr": "Plage La Caleta" },
+      "name": { "es": "Playa La Caleta", "en": "La Caleta Beach" },
       "description": {
         "es": "La playa más icónica de Cádiz, pequeña y recogida, flanqueada por los castillos de Santa Catalina y San Sebastián. Es el corazón romántico de la ciudad.",
-        "en": "Cádiz's most iconic beach, small and intimate, flanked by the castles of Santa Catalina and San Sebastián. It is the romantic heart of the city.",
-        "fr": "La plage la plus emblématique de Cadix, petite et intime, flanquée des châteaux Santa Catalina et San Sebastián."
+        "en": "Cádiz's most iconic beach, small and intimate, flanked by the castles of Santa Catalina and San Sebastián. It is the romantic heart of the city."
       },
       "tips": {
         "es": "Visítala al atardecer y quédate para aplaudir la puesta de sol como los gaditanos.",
-        "en": "Visit at sunset and stay to applaud the setting sun like the locals do.",
-        "fr": "Visitez-la au coucher du soleil et restez pour applaudir le soleil comme les locaux."
+        "en": "Visit at sunset and stay to applaud the setting sun like the locals do."
       },
       "type": "playa",
       "latitude": 36.5271,
@@ -24,16 +22,14 @@
     {
       "id": "catedral-cadiz",
       "slug": "catedral-de-cadiz",
-      "name": { "es": "Catedral de Cádiz", "en": "Cádiz Cathedral", "fr": "Cathédrale de Cadix" },
+      "name": { "es": "Catedral de Cádiz", "en": "Cádiz Cathedral" },
       "description": {
         "es": "La Catedral de Cádiz, conocida como la Catedral Nueva, es una joya del barroco tardío que domina el casco histórico con su cúpula amarilla.",
-        "en": "Cádiz Cathedral, known as the New Cathedral, is a jewel of late Baroque architecture that dominates the old town with its yellow dome.",
-        "fr": "La Cathédrale de Cadix, connue sous le nom de Cathédrale Nouvelle, est un joyau du baroque tardif."
+        "en": "Cádiz Cathedral, known as the New Cathedral, is a jewel of late Baroque architecture that dominates the old town with its yellow dome."
       },
       "tips": {
         "es": "Sube a la torre para las mejores vistas panorámicas de la ciudad.",
-        "en": "Climb the tower for the best panoramic views of the city.",
-        "fr": "Montez à la tour pour les meilleures vues panoramiques de la ville."
+        "en": "Climb the tower for the best panoramic views of the city."
       },
       "type": "monumento",
       "latitude": 36.5289,
@@ -44,16 +40,14 @@
     {
       "id": "torre-tavira",
       "slug": "torre-tavira",
-      "name": { "es": "Torre Tavira", "en": "Torre Tavira", "fr": "Torre Tavira" },
+      "name": { "es": "Torre Tavira", "en": "Torre Tavira" },
       "description": {
         "es": "La torre vigía más alta de Cádiz alberga la cámara oscura más grande de España. Desde su azotea se contemplan las 160 torres históricas de la ciudad.",
-        "en": "The tallest watchtower in Cádiz houses Spain's largest camera obscura. From its rooftop you can see the city's 160 historic towers.",
-        "fr": "La plus haute tour de guet de Cadix abrite la plus grande chambre obscure d'Espagne."
+        "en": "The tallest watchtower in Cádiz houses Spain's largest camera obscura. From its rooftop you can see the city's 160 historic towers."
       },
       "tips": {
         "es": "La sesión de cámara oscura dura 10 minutos y merece mucho la pena.",
-        "en": "The camera obscura session lasts 10 minutes and is well worth it.",
-        "fr": "La séance de chambre obscure dure 10 minutes et vaut vraiment le détour."
+        "en": "The camera obscura session lasts 10 minutes and is well worth it."
       },
       "type": "mirador",
       "latitude": 36.5319,
@@ -64,16 +58,14 @@
     {
       "id": "playa-bolonia",
       "slug": "playa-de-bolonia",
-      "name": { "es": "Playa de Bolonia", "en": "Bolonia Beach", "fr": "Plage de Bolonia" },
+      "name": { "es": "Playa de Bolonia", "en": "Bolonia Beach" },
       "description": {
         "es": "Una de las playas más espectaculares de Andalucía. Aguas cristalinas, duna de 30 metros y las ruinas romanas de Baelo Claudia al fondo.",
-        "en": "One of the most spectacular beaches in Andalusia. Crystal-clear waters, a 30-metre dune and the Roman ruins of Baelo Claudia in the background.",
-        "fr": "L'une des plages les plus spectaculaires d'Andalousie avec ses eaux cristallines et la dune de 30 mètres."
+        "en": "One of the most spectacular beaches in Andalusia. Crystal-clear waters, a 30-metre dune and the Roman ruins of Baelo Claudia in the background."
       },
       "tips": {
         "es": "Visita las ruinas de Baelo Claudia antes de la playa, merece la pena el esfuerzo.",
-        "en": "Visit the Baelo Claudia ruins before the beach — it's worth the effort.",
-        "fr": "Visitez les ruines de Baelo Claudia avant la plage, ça vaut vraiment le détour."
+        "en": "Visit the Baelo Claudia ruins before the beach — it's worth the effort."
       },
       "type": "playa",
       "latitude": 36.0896,
@@ -84,16 +76,14 @@
     {
       "id": "parque-natural-donana",
       "slug": "parque-natural-entorno-donana",
-      "name": { "es": "Parque Natural La Breña", "en": "La Breña Natural Park", "fr": "Parc Naturel La Breña" },
+      "name": { "es": "Parque Natural La Breña", "en": "La Breña Natural Park" },
       "description": {
         "es": "El Parque Natural de La Breña y Marismas del Barbate es un paraíso de pinos y acantilados sobre el Atlántico, con la Playa de los Caños de Meca al pie.",
-        "en": "La Breña and Barbate Marshes Natural Park is a paradise of pines and cliffs over the Atlantic, with Caños de Meca beach at its foot.",
-        "fr": "Le Parc Naturel La Breña est un paradis de pins et de falaises sur l'Atlantique."
+        "en": "La Breña and Barbate Marshes Natural Park is a paradise of pines and cliffs over the Atlantic, with Caños de Meca beach at its foot."
       },
       "tips": {
         "es": "El sendero de los acantilados es impresionante, especialmente al amanecer.",
-        "en": "The cliff trail is stunning, especially at sunrise.",
-        "fr": "Le sentier des falaises est impressionnant, surtout au lever du soleil."
+        "en": "The cliff trail is stunning, especially at sunrise."
       },
       "type": "naturaleza",
       "latitude": 36.1846,
@@ -104,16 +94,14 @@
     {
       "id": "mercado-central",
       "slug": "mercado-central-cadiz",
-      "name": { "es": "Mercado Central de Cádiz", "en": "Cádiz Central Market", "fr": "Marché Central de Cadix" },
+      "name": { "es": "Mercado Central de Cádiz", "en": "Cádiz Central Market" },
       "description": {
         "es": "El corazón gastronómico de Cádiz. Un mercado neoclásico del siglo XIX donde los gaditanos compran pescado fresco del día y los visitantes descubren la cocina local.",
-        "en": "The gastronomic heart of Cádiz. A 19th-century neoclassical market where locals buy the day's fresh fish and visitors discover local cuisine.",
-        "fr": "Le cœur gastronomique de Cadix. Un marché néoclassique du XIXe siècle où les habitants achètent du poisson frais."
+        "en": "The gastronomic heart of Cádiz. A 19th-century neoclassical market where locals buy the day's fresh fish and visitors discover local cuisine."
       },
       "tips": {
         "es": "Llega antes de las 10h para ver la subasta de pescado y comprar los mejores productos.",
-        "en": "Arrive before 10am to see the fish auction and buy the best products.",
-        "fr": "Arrivez avant 10h pour voir la vente aux enchères de poisson et acheter les meilleurs produits."
+        "en": "Arrive before 10am to see the fish auction and buy the best products."
       },
       "type": "gastronomia",
       "latitude": 36.5327,

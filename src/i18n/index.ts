@@ -1,10 +1,9 @@
 import es from './es.json';
 import en from './en.json';
-import fr from './fr.json';
 
-export type Lang = 'es' | 'en' | 'fr';
+export type Lang = 'es' | 'en';
 
-const translations = { es, en, fr } as const;
+const translations = { es, en } as const;
 
 export function t(lang: Lang, key: string, vars?: Record<string, string | number>): string {
   const keys = key.split('.');
@@ -22,14 +21,13 @@ export function t(lang: Lang, key: string, vars?: Record<string, string | number
 
 export function getLangFromUrl(url: URL): Lang {
   const [, lang] = url.pathname.split('/');
-  if (lang === 'en' || lang === 'fr') return lang;
+  if (lang === 'en') return lang;
   return 'es';
 }
 
 export function getRouteForLang(lang: Lang, currentPath: string): string {
-  // Replace language prefix in path
   const parts = currentPath.split('/').filter(Boolean);
-  const knownLangs: Lang[] = ['es', 'en', 'fr'];
+  const knownLangs: Lang[] = ['es', 'en'];
   if (knownLangs.includes(parts[0] as Lang)) {
     parts[0] = lang;
   } else {
@@ -39,10 +37,10 @@ export function getRouteForLang(lang: Lang, currentPath: string): string {
 }
 
 export const CATEGORIES = {
-  fiestas:    { es: 'Fiestas',    en: 'Festivals',  fr: 'Fêtes',        color: '#e07a5f' },
-  turismo:    { es: 'Turismo',    en: 'Tourism',    fr: 'Tourisme',      color: '#0466c8' },
-  gastronomia:{ es: 'Gastronomía',en: 'Food',       fr: 'Gastronomie',  color: '#10b981' },
-  cultura:    { es: 'Cultura',    en: 'Culture',    fr: 'Culture',       color: '#a855f7' },
+  fiestas:    { es: 'Fiestas',     en: 'Festivals', color: '#e07a5f' },
+  turismo:    { es: 'Turismo',     en: 'Tourism',   color: '#0466c8' },
+  gastronomia:{ es: 'Gastronomía', en: 'Food',      color: '#10b981' },
+  cultura:    { es: 'Cultura',     en: 'Culture',   color: '#a855f7' },
 } as const;
 
 export type Category = keyof typeof CATEGORIES;
