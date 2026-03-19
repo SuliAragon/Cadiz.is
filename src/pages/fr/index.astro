@@ -8,9 +8,10 @@ const lang = 'fr';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const allArticles = await getCollection('articles', (entry) => entry.id.startsWith('fr/'));
-const articles = allArticles.sort(
+const sorted = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
+const featured = sorted.slice(0, 6);
 ---
 
 <BaseLayout lang={lang} title={t(lang, 'meta.site_name')} description={t(lang, 'meta.site_description')}>
@@ -27,9 +28,46 @@ const articles = allArticles.sort(
     <div class="home-hero__subtitle">{t(lang, 'home.subtitle')}</div>
     <div class="home-hero__desc">{t(lang, 'home.desc')}</div>
   </section>
-  <div class="container section" style="padding-top: 0">
-    {articles.length > 0
-      ? <ArticleGrid articles={articles} lang={lang} />
+
+  <!-- INTRO -->
+  <section class="home-intro">
+    <div class="home-intro__inner">
+      <p class="home-intro__label">Qu'est-ce que cadiz.is ?</p>
+      <p class="home-intro__text">
+        Cadix est la plus ancienne ville d'Occident et l'une des plus vivantes de la planète.
+        <em>cadiz.is</em> est né pour la raconter sans filtre : ses fêtes, sa gastronomie,
+        ses plages, son histoire et son âme. Un portail fait par et pour ceux qui aiment cette ville,
+        en espagnol, anglais et français.
+      </p>
+      <div class="home-intro__pillars">
+        <a href={`${base}/fr/fiestas`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🎭</span>
+          <span>Fêtes</span>
+        </a>
+        <a href={`${base}/fr/turismo`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🌊</span>
+          <span>Tourisme</span>
+        </a>
+        <a href={`${base}/fr/gastronomia`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🍤</span>
+          <span>Gastronomie</span>
+        </a>
+        <a href={`${base}/fr/cultura`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🎶</span>
+          <span>Culture</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <div class="container section">
+    <div class="home-articles__header">
+      <h2 class="home-articles__title">À la une</h2>
+      <a href={`${base}/fr/turismo`} class="home-articles__all">Voir tous les articles →</a>
+    </div>
+    {featured.length > 0
+      ? <ArticleGrid articles={featured} lang={lang} />
       : <p class="empty-msg">{t(lang, 'category.no_articles')}</p>
     }
   </div>

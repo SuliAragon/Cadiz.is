@@ -7,12 +7,11 @@ import { getCollection } from 'astro:content';
 const lang = 'es';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const allArticles = await getCollection('articles', (entry) =>
-  entry.id.startsWith('es/')
-);
-const articles = allArticles.sort(
+const allArticles = await getCollection('articles', (entry) => entry.id.startsWith('es/'));
+const sorted = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
+const featured = sorted.slice(0, 6);
 
 const heroWords = t(lang, 'home.hero_words') as unknown as string[];
 ---
@@ -35,10 +34,45 @@ const heroWords = t(lang, 'home.hero_words') as unknown as string[];
     <div class="home-hero__desc">{t(lang, 'home.desc')}</div>
   </section>
 
+  <!-- INTRO -->
+  <section class="home-intro">
+    <div class="home-intro__inner">
+      <p class="home-intro__label">¿Qué es cadiz.is?</p>
+      <p class="home-intro__text">
+        Cádiz es la ciudad más antigua de Occidente y una de las más vivas del planeta.
+        <em>cadiz.is</em> nació para contarla sin filtros: sus fiestas, su gastronomía,
+        sus playas, su historia y su alma. Un portal hecho por y para quienes aman esta ciudad,
+        en español, inglés y francés.
+      </p>
+      <div class="home-intro__pillars">
+        <a href={`${base}/es/fiestas`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🎭</span>
+          <span>Fiestas</span>
+        </a>
+        <a href={`${base}/es/turismo`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🌊</span>
+          <span>Turismo</span>
+        </a>
+        <a href={`${base}/es/gastronomia`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🍤</span>
+          <span>Gastronomía</span>
+        </a>
+        <a href={`${base}/es/cultura`} class="home-intro__pillar">
+          <span class="home-intro__pillar-icon">🎶</span>
+          <span>Cultura</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ARTICLES -->
-  <div class="container section" style="padding-top: 0">
-    {articles.length > 0
-      ? <ArticleGrid articles={articles} lang={lang} />
+  <div class="container section">
+    <div class="home-articles__header">
+      <h2 class="home-articles__title">Lo último</h2>
+      <a href={`${base}/es/turismo`} class="home-articles__all">Ver todos los artículos →</a>
+    </div>
+    {featured.length > 0
+      ? <ArticleGrid articles={featured} lang={lang} />
       : <p class="empty-msg">{t(lang, 'category.no_articles')}</p>
     }
   </div>
