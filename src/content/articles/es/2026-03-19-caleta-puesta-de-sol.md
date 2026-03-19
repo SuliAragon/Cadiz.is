@@ -5,7 +5,7 @@ excerpt: "Hay algo mágico en la playa de La Caleta cuando el sol se despide del
 category: "turismo"
 author: "ana-sanchez"
 publishedAt: "2026-03-19T18:00:00Z"
-image: "/images/articles/caleta-puesta-de-sol.webp"
+image: "/images/articles/caleta-puesta-de-sol.jpg"
 imageAlt: "Puesta de sol sobre la playa de La Caleta con los castillos al fondo"
 imageCredit: "Imagen generada con IA (fal.ai FLUX.1)"
 isAiGenerated: true

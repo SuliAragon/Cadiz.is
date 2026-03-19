@@ -5,7 +5,7 @@ excerpt: "There is something magical about La Caleta beach when the sun says goo
 category: "turismo"
 author: "ana-sanchez"
 publishedAt: "2026-03-19T18:00:00Z"
-image: "/images/articles/caleta-puesta-de-sol.webp"
+image: "/images/articles/caleta-puesta-de-sol.jpg"
 imageAlt: "Sunset over La Caleta beach with the castles in the background"
 imageCredit: "AI generated image (fal.ai FLUX.1)"
 isAiGenerated: true
