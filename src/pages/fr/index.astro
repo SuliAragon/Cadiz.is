@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FeaturedArticle from '../../components/articles/FeaturedArticle.astro';
 import ArticleGrid from '../../components/articles/ArticleGrid.astro';
 import { t } from '../../i18n/index';
 import { getCollection } from 'astro:content';
@@ -11,7 +12,8 @@ const allArticles = await getCollection('articles', (entry) => entry.id.startsWi
 const sorted = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
-const featured = sorted.slice(0, 6);
+const featuredArticle = sorted[0];
+const restArticles = sorted.slice(1, 6);
 ---
 
 <BaseLayout lang={lang} title={t(lang, 'meta.site_name')} description={t(lang, 'meta.site_description')}>
@@ -29,7 +31,6 @@ const featured = sorted.slice(0, 6);
     <div class="home-hero__desc">{t(lang, 'home.desc')}</div>
   </section>
 
-  <!-- INTRO -->
   <section class="home-intro">
     <div class="home-intro__inner">
       <p class="home-intro__label">Qu'est-ce que cadiz.is ?</p>
@@ -40,32 +41,21 @@ const featured = sorted.slice(0, 6);
         en espagnol, anglais et français.
       </p>
       <div class="home-intro__pillars">
-        <a href={`${base}/fr/fiestas`} class="home-intro__pillar">
-          <span>Fêtes</span>
-        </a>
-        <a href={`${base}/fr/turismo`} class="home-intro__pillar">
-          <span>Tourisme</span>
-        </a>
-        <a href={`${base}/fr/gastronomia`} class="home-intro__pillar">
-          <span>Gastronomie</span>
-        </a>
-        <a href={`${base}/fr/cultura`} class="home-intro__pillar">
-          <span>Culture</span>
-        </a>
+        <a href={`${base}/fr/fiestas`} class="home-intro__pillar"><span>Fêtes</span></a>
+        <a href={`${base}/fr/turismo`} class="home-intro__pillar"><span>Tourisme</span></a>
+        <a href={`${base}/fr/gastronomia`} class="home-intro__pillar"><span>Gastronomie</span></a>
+        <a href={`${base}/fr/cultura`} class="home-intro__pillar"><span>Culture</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ARTICLES -->
   <div class="container section">
     <div class="home-articles__header">
       <h2 class="home-articles__title">À la une</h2>
-      <a href={`${base}/fr/turismo`} class="home-articles__all">Voir tous les articles →</a>
+      <a href={`${base}/fr/articles`} class="home-articles__all">Voir tous les articles →</a>
     </div>
-    {featured.length > 0
-      ? <ArticleGrid articles={featured} lang={lang} />
-      : <p class="empty-msg">{t(lang, 'category.no_articles')}</p>
-    }
+    {featuredArticle && <FeaturedArticle article={featuredArticle} lang={lang} />}
+    {restArticles.length > 0 && <ArticleGrid articles={restArticles} lang={lang} />}
   </div>
 </BaseLayout>
 

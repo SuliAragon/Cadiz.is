@@ -1,0 +1,65 @@
+---
+import Badge from '../ui/Badge.astro';
+import { CATEGORIES, type Lang } from '../../i18n/index';
+
+interface Props {
+  article: {
+    slug: string;
+    data: {
+      title: string;
+      excerpt: string;
+      category: string;
+      author: string;
+      publishedAt: string;
+      image?: string;
+      imageAlt?: string;
+      articleSlug?: string;
+    };
+  };
+  lang: Lang;
+}
+
+const { article, lang } = Astro.props;
+const { data } = article;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const slugForUrl = data.articleSlug ?? article.slug.replace(/^(es|en|fr)\//, '').replace(/\d{4}-\d{2}-\d{2}-/, '');
+const articlePath = lang === 'es'
+  ? `${base}/${lang}/articulos/${slugForUrl}/`
+  : `${base}/${lang}/articles/${slugForUrl}/`;
+
+const categoryLabel = data.category in CATEGORIES
+  ? CATEGORIES[data.category as keyof typeof CATEGORIES][lang]
+  : data.category;
+
+const publishedDate = new Date(data.publishedAt).toLocaleDateString(
+  lang === 'en' ? 'en-US' : lang === 'fr' ? 'fr-FR' : 'es-ES',
+  { day: 'numeric', month: 'long', year: 'numeric' }
+);
+
+const imgSrc = data.image ? `${base}${data.image}` : null;
+---
+
+<article class="featured-article">
+  <a href={articlePath} class="featured-article__img-link">
+    <div class="featured-article__img-wrap">
+      {imgSrc
+        ? <img src={imgSrc} alt={data.imageAlt ?? data.title} loading="eager" />
+        : <div class="featured-article__img-placeholder" />
+      }
+    </div>
+  </a>
+  <div class="featured-article__body">
+    <div class="featured-article__meta">
+      <Badge category={data.category} label={categoryLabel} />
+      <span class="featured-article__date">{publishedDate}</span>
+    </div>
+    <h2 class="featured-article__title">
+      <a href={articlePath}>{data.title}</a>
+    </h2>
+    <p class="featured-article__excerpt">{data.excerpt}</p>
+    <a href={articlePath} class="featured-article__cta">
+      {lang === 'en' ? 'Read article' : lang === 'fr' ? 'Lire l\'article' : 'Leer artículo'} →
+    </a>
+  </div>
+</article>

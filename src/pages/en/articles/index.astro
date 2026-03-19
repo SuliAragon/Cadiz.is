@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleGrid from '../../../components/articles/ArticleGrid.astro';
+import { getCollection } from 'astro:content';
+
+const lang = 'en';
+const allArticles = await getCollection('articles', (entry) => entry.id.startsWith('en/'));
+const articles = allArticles.sort(
+  (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
+---
+
+<BaseLayout lang={lang} title="All articles — cadiz.is" description="All articles about Cádiz: festivals, tourism, gastronomy and culture.">
+  <div class="container section">
+    <div class="page-hero">
+      <h1 class="page-hero__title">All articles</h1>
+      <p class="page-hero__desc">Festivals, tourism, gastronomy and culture of Cádiz.</p>
+    </div>
+    <ArticleGrid articles={articles} lang={lang} />
+  </div>
+</BaseLayout>
