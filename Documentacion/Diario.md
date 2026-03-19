@@ -1,205 +1,103 @@
-# Diario de Desarrollo — cadiz.is estático
+# Diario de cadiz.is
 
-Registro cronológico del proceso de construcción de `WebBlogEstaticaCadiz.is`,
-la versión estática del blog sobre Cádiz, desplegada en GitHub Pages.
-
----
-
-## Sesión 1 — Arranque del proyecto
-
-### Punto de partida
-El proyecto `WebBlogCadiz.is` era un blog dinámico construido con Django + React.
-Funcionaba bien pero requería servidor, base de datos y mantenimiento continuo.
-La idea fue convertirlo en un sitio 100% estático para poder alojarlo gratis en
-GitHub Pages, eliminando toda la infraestructura de backend.
-
-### Decisiones iniciales
-- **Framework elegido**: Astro 4 (genera HTML estático en build time, cero JS por defecto)
-- **Despliegue**: GitHub Pages en el repositorio `SuliAragon/Cadiz.is`
-- **URL inicial**: `https://SuliAragon.github.io/Cadiz.is/`
-- **Contenido**: Markdown + JSON versionado en Git (sin base de datos)
-- **Idiomas**: ES / EN / FR con routing nativo de Astro (`/es/`, `/en/`, `/fr/`)
-- **CSS**: Vanilla CSS con las mismas variables de diseño que el sitio dinámico
-- **Fuentes**: Playfair Display (títulos), Inter (cuerpo), DM Sans (UI)
-- **Colores**: `--accent: #0466c8` (Azul Atlántico), `--accent-warm: #e07a5f` (Terracota)
-
-### Estructura de carpetas definida
-```
-src/
-  content/articles/{es,en,fr}/   ← Artículos en Markdown
-  data/                          ← events.json, places.json, authors.json
-  i18n/                          ← Traducciones y helpers
-  pages/{es,en,fr}/              ← Rutas por idioma
-  components/                    ← Componentes Astro
-  layouts/                       ← BaseLayout
-  styles/                        ← variables.css + global.css
-public/
-  images/                        ← Imágenes estáticas
-```
+*Cómo construimos un portal sobre la ciudad más antigua de Occidente, sin servidor, sin base de datos, y con más ganas que presupuesto.*
 
 ---
 
-## Sesión 1 — Construcción del núcleo
+## El punto de partida
 
-### Lo que se construyó
-- `astro.config.mjs` con i18n nativo (`prefixDefaultLocale: true`)
-- Schema de Content Collections (`src/content/config.ts`) con validación Zod
-- Sistema de traducciones `src/i18n/index.ts` con helper `t(lang, key)`
-- 10 preguntas de quiz en ES/EN/FR (`src/i18n/quizQuestions.ts`)
-- Todos los componentes: `ArticleCard`, `ArticleGrid`, `EventCard`, `EventFeatured`, `PlaceCard`, `Badge`, `AiBadge`
-- Layout base con SEO, OG tags y hreflang alternates
-- Navbar con selector de idioma y menú móvil en vanilla JS
-- Páginas de home, categorías, agenda, lugares, quiz y detalle de artículo para los 3 idiomas
-- Primer artículo de muestra: "La Caleta al atardecer" en ES/EN/FR
-- Datos en JSON: 4 eventos, 6 lugares, 10 autores
-- GitHub Actions workflow (`deploy.yml`) para despliegue automático en push a `main`
+Todo empezó con una web que ya existía.
 
-### Errores encontrados y soluciones
+`WebBlogCadiz.is` era un blog sobre Cádiz construido con Django y React — funcional, completo, con base de datos, con autores, con categorías. Una arquitectura sólida para una redacción de verdad. El problema era ese precisamente: requería servidor, mantenimiento, costes mensuales, y una infraestructura que pesaba demasiado para un proyecto que en ese momento todavía estaba encontrando su camino.
 
-**Error 1 — `ContentSchemaContainsSlugError`**
-Astro reserva el campo `slug` en Content Collections. Lo habíamos nombrado `slug`
-en el frontmatter y en el schema. Solución: renombrar a `articleSlug` en todos los
-ficheros (config, markdown, componentes, páginas).
+La pregunta que nos hicimos fue sencilla: ¿y si lo convertimos en estático?
 
-**Error 2 — JSON files fuera de colección**
-`authors.json`, `events.json` y `places.json` estaban en `src/content/` pero Astro
-exige que los ficheros JSON en esa carpeta sean parte de una colección con subdirectorio.
-Solución: moverlos a `src/data/` (fuera de content collections) y actualizar todos
-los imports.
+No como una rebaja. Como una decisión estratégica. Un sitio estático bien hecho puede tener el mismo aspecto, la misma estructura, el mismo alma que uno dinámico. Y puede vivir gratis en GitHub Pages, versionado en Git, sin ningún servidor que mantener. El contenido en Markdown. Los datos en JSON. El código en un repositorio público.
 
-**Error 3 — Sitemap fallando en build**
-`@astrojs/sitemap` lanzaba error porque `site` tenía un valor placeholder
-(`TU_USUARIO`). Solución: eliminar la integración del sitemap de `astro.config.mjs`
-(dejada como comentario para cuando se configure el dominio real).
-
-**Error 4 — `node_modules/` y `dist/` en el repositorio**
-El `.gitignore` no existía cuando se hizo el primer commit. Solución: crear
-`.gitignore`, ejecutar `git rm -r --cached dist/ node_modules/ .astro/` y
-commitear la limpieza (10.772 ficheros eliminados del tracking).
-
-**Resultado**: Build limpio, 27 páginas generadas, 0 errores. Push exitoso a GitHub.
+Esa idea fue el arranque de `cadiz.is`.
 
 ---
 
-## Sesión 2 — Configuración de GitHub Pages y dominio
+## Elegir las herramientas
 
-### Activación de GitHub Pages
-Se configuró GitHub Pages en `Settings → Pages → Source → GitHub Actions`.
-El workflow `deploy.yml` se disparó automáticamente y el sitio quedó live en
-`https://SuliAragon.github.io/Cadiz.is/`.
+Decidimos construirlo con **Astro**. No fue una elección al azar — Astro es el framework perfecto para esto: genera HTML puro en tiempo de build, casi sin JavaScript en el cliente, y tiene un sistema de i18n nativo que nos permitía manejar tres idiomas (español, inglés y francés) sin malabarismos.
 
-### Intento de dominio personalizado `cadiz.is`
-Se intentó configurar `cadiz.is` como dominio personalizado en GitHub Pages.
-GitHub devolvió `InvalidDNSError` porque los registros DNS no estaban configurados.
+La identidad visual la tomamos prestada del sitio dinámico: las mismas fuentes, la misma paleta, los mismos componentes. La idea era que cualquiera que conociera la web original reconociera esta. Que no pareciera una versión menor, sino la misma ciudad contada de otra manera.
 
-**Causa**: el dominio `cadiz.is` no estaba comprado. Para configurar un dominio
-personalizado hay que ser propietario del dominio y añadir registros A en el
-registrador apuntando a las IPs de GitHub:
-```
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-```
-
-**Decisión**: usar la URL de GitHub Pages por defecto hasta que se compre el dominio.
-Se revirtió `astro.config.mjs` a `site: 'https://SuliAragon.github.io'` + `base: '/Cadiz.is'`
-y se eliminó el fichero `public/CNAME`.
-
-**Nota para el futuro**: cuando se compre `cadiz.is`, los pasos serán:
-1. Añadir registros A en el registrador
-2. Cambiar `site` a `'https://cadiz.is'` y quitar `base` en `astro.config.mjs`
-3. Cambiar `siteUrl` en `BaseLayout.astro`
-4. Añadir `public/CNAME` con contenido `cadiz.is`
-5. Push a main
+Desde el primer momento supimos que queríamos tres idiomas. Cádiz no es solo una ciudad española — es una ciudad que recibe gente de toda Europa, que tiene historia fenicia, romana, árabe, americana. El inglés y el francés no eran un extra: eran parte de la identidad del proyecto.
 
 ---
 
-## Sesión 2 — Imágenes y artículos
+## Los primeros tropiezos
 
-### Problema: imágenes no cargaban
-Las imágenes referenciadas en el código (p.ej. `/images/articles/caleta-puesta-de-sol.png`)
-no se mostraban en producción.
+Construir algo desde cero siempre tiene sus momentos. El primero llegó casi de inmediato.
 
-**Causa 1 — Rutas sin prefijo base**: Con `base: '/Cadiz.is'` configurado en Astro,
-los ficheros de `public/` se sirven en `/Cadiz.is/images/...` pero los componentes
-usaban `src={data.image}` que generaba `/images/...` sin el prefijo.
+Astro reserva internamente el campo `slug` en sus colecciones de contenido. Nosotros lo habíamos usado en el frontmatter de los artículos, con toda la naturalidad del mundo, y el sistema nos devolvió un error que al principio no entendimos. La solución fue renombrarlo a `articleSlug` — un cambio menor en nombre pero que había que propagar por todos los archivos Markdown, el esquema de validación y los componentes que construían las URLs.
 
-**Solución**: Añadir `import.meta.env.BASE_URL` a todos los `src` de imágenes en los
-componentes `ArticleCard`, `EventCard`, `EventFeatured`, `PlaceCard` y las 3 páginas
-de detalle de artículo.
+El segundo problema fue más tonto: habíamos puesto los archivos JSON de datos (eventos, lugares, autores) dentro de `src/content/`, que es la carpeta que Astro reserva para sus colecciones. Astro los rechazó. Los movimos a `src/data/` y todo volvió a funcionar. A veces los errores más frustrantes tienen las soluciones más simples.
 
-**Causa 2 — Ficheros JPG corruptos**: Los `.jpg` copiados del sitio dinámico
-(`caleta.jpg`, `cultura.jpg`, etc.) pesaban solo 1.9KB — estaban corruptos.
-Los ficheros reales eran los `.png` (600-800KB cada uno).
-
-**Solución**: Copiar los `.png` del sitio dinámico y actualizar todas las referencias
-de `.jpg` a `.png` en los 24 ficheros Markdown y los 2 JSON de datos.
-
-### Artículos generados
-Como los artículos del sitio dinámico viven en base de datos (no accesibles), se
-generaron 7 artículos nuevos × 3 idiomas = **21 ficheros Markdown** nuevos:
-
-| Artículo | Categoría |
-|---|---|
-| El Carnaval de Cádiz 2026 | fiestas |
-| La Semana Santa en Cádiz | fiestas |
-| Los pueblos blancos de Cádiz | turismo |
-| El pescaíto frito en Cádiz | gastronomia |
-| El atún de almadraba de Barbate | gastronomia |
-| El flamenco gaditano | cultura |
-| Cádiz, la ciudad más antigua de Occidente | cultura |
-
-Con el artículo original de La Caleta, el total es **8 artículos × 3 idiomas = 24 ficheros**.
+El tercero fue el sitemap. Habíamos instalado `@astrojs/sitemap` con ilusión, pero el plugin necesita una URL de sitio real para funcionar. La nuestra en ese momento era un placeholder. El build se rompía en silencio. Lo desactivamos y lo dejamos para cuando tuviéramos dominio propio.
 
 ---
 
-## Sesión 2 — Mejoras en la página de inicio
+## Subirlo a GitHub Pages
 
-### Problema: home solo mostraba 1 artículo
-El deploy inicial solo tenía 1 artículo (La Caleta). Tras añadir los 21 nuevos,
-la home mostraba todos pero sin límite.
+Cuando el build local funcionó por primera vez — 27 páginas generadas, cero errores — fue un momento pequeño pero satisfactorio. Una de esas victorias silenciosas que solo se celebran internamente.
 
-### Cambios realizados en las 3 homes (ES/EN/FR):
-1. **Sección intro**: texto descriptivo del portal + 4 botones de categoría
-   (sin iconos — se probaron emojis pero se eliminaron porque se veían mal)
-2. **Grid de artículos**: limitado a 6 más recientes (`slice(0, 6)`)
-3. **Enlace "Ver todos los artículos"** en la cabecera de la sección
+Lo siguiente fue configurar GitHub Actions para que cada push a `main` desplegara automáticamente. Creamos el workflow, lo pusimos en `.github/workflows/deploy.yml`, hicimos push... y entonces descubrimos que habíamos cometido el error clásico del principiante: `node_modules/` y `dist/` estaban dentro del repositorio. Miles de archivos que no deberían estar ahí. Tuvimos que crear el `.gitignore` a posteriori, limpiar el historial con `git rm --cached`, y hacer un commit de limpieza que borró de golpe más de 10.000 archivos del tracking.
 
-### CSS añadido a `global.css`:
-- `.home-intro` — sección con degradado sutil y borde
-- `.home-intro__text` — párrafo en Playfair Display, tamaño grande
-- `.home-intro__pillars` — flex row con los 4 botones de categoría
-- `.home-articles__header` — flex row para el título y el enlace "Ver todos"
+Un poco de vergüenza, mucho aprendizaje.
 
 ---
 
-## Estado actual del proyecto
+## El dominio que no era nuestro
 
-### Funciona correctamente
-- ✅ 48 páginas generadas (home × 3, categorías × 4 × 3, artículos × 8 × 3, agenda × 3, lugares × 3, quiz × 3, redirect raíz)
-- ✅ Imágenes cargando en artículos, eventos y lugares
-- ✅ Multiidioma ES/EN/FR con routing `/es/`, `/en/`, `/fr/`
-- ✅ Quiz interactivo en vanilla JS (10 preguntas, 3 idiomas)
-- ✅ Agenda con eventos futuros filtrados por fecha
-- ✅ Navbar responsive con menú móvil
-- ✅ SEO básico con meta tags, OG y hreflang
-- ✅ GitHub Actions desplegando automáticamente en cada push a `main`
-- ✅ Sección intro en la home con descripción del portal
+En algún momento de euforia configuramos `cadiz.is` como dominio personalizado en GitHub Pages. GitHub nos respondió con un `InvalidDNSError`. Lógico: para configurar un dominio personalizado primero hay que poseerlo.
 
-### Pendiente / mejoras futuras
-- ⏳ Comprar dominio `cadiz.is` y configurar DNS
-- ⏳ Imágenes definitivas (las actuales son reutilizadas del sitio dinámico, no corresponden al contenido de cada artículo)
-- ⏳ Habilitar sitemap (`@astrojs/sitemap`) cuando se configure el dominio real
-- ⏳ Integración con agente OpenClaw para publicación automatizada de artículos
-- ⏳ Más artículos y contenido de calidad
+El TLD `.is` pertenece a Islandia. Caro. Y `malaga.is` — la referencia más directa del proyecto — funciona porque ellos sí tienen ese dominio. Nosotros no. De momento la web vive en `suliaragon.github.io/Cadiz.is` y el nombre de marca sigue siendo `cadiz.is`, con la promesa de que algún día el dominio estará a la altura.
 
-### Repositorio
-- **GitHub**: `https://github.com/SuliAragon/Cadiz.is`
-- **Web en producción**: `https://SuliAragon.github.io/Cadiz.is/`
-- **Branch principal**: `main`
-- **Deploy**: automático via GitHub Actions en cada push
+La alternativa que más nos convence para cuando llegue ese momento es `cadizis.com` — el dominio dice literalmente "Cádiz is", mantiene el juego de palabras del word slider del hero, y un `.com` es accesible y barato. Lo anotamos. Seguimos.
 
 ---
 
-*Diario iniciado el 19 de marzo de 2026.*
+## Las imágenes que no eran imágenes
+
+Cuando añadimos las primeras imágenes a la web, algo no funcionaba. Las fotos no aparecían. El código parecía correcto. El build también.
+
+El problema tenía dos capas.
+
+La primera: con `base: '/Cadiz.is'` configurado en Astro, todos los archivos estáticos se sirven bajo ese prefijo. Pero los componentes usaban rutas como `/images/articles/caleta.jpg` — sin el prefijo. El fix fue añadir `import.meta.env.BASE_URL` a cada `src` de imagen en cada componente. Tedioso pero directo.
+
+La segunda era más sutil y más ridícula: los archivos `.jpg` que habíamos copiado del sitio dinámico pesaban 1.9KB cada uno. No eran imágenes reales. Eran metadatos, thumbnails corruptos, algo que el sistema había generado en algún punto y que nosotros habíamos copiado sin comprobar. Los `.png` del mismo directorio, esos sí eran las imágenes reales, con sus 600-800KB de peso. Los copiamos, actualizamos todas las referencias, y las fotos aparecieron por fin.
+
+Esa fue la primera vez que vimos la web con imágenes de verdad. Merece la pena recordarlo.
+
+---
+
+## El momento malaga.is
+
+En algún punto del proceso alguien se fijó en que `cadiz.is` y `malaga.is` se parecían bastante. Fuimos a ver `malaga.is` con ojos críticos.
+
+El parecido era real. Mismas fuentes — Playfair Display e Inter. Mismo color de acento terracota — exactamente `#e07a5f`, hasta el último dígito hexadecimal. Quiz interactivo. Estructura de categorías. Layout de cards.
+
+No era una copia, pero era una inspiración demasiado evidente. Y aunque la ley no protege las paletas de colores ni los layouts genéricos, la imagen sí importa. No queríamos que alguien pusiera las dos webs lado a lado y sacara conclusiones.
+
+Tomamos la decisión de diferenciarnos de verdad. Cambiamos las fuentes — de Playfair Display a **Lora**, de Inter a **Nunito Sans**. Cambiamos la paleta — el terracota de `#e07a5f` pasó a ser un `#d4622a` más oscuro y más gaditano, y añadimos un `--accent-gold: #c9a84c` que no tiene nada que ver con Málaga y sí mucho con esa luz dorada del atardecer en La Caleta. El fondo pasó de blanco frío a un `#fdf8f0` de arena cálida.
+
+La web sigue siendo parecida en estructura — porque las dos son blogs editoriales de ciudad y eso dicta buena parte de las decisiones. Pero ya no se confunden.
+
+---
+
+## El estado actual
+
+Hoy `cadiz.is` tiene 51 páginas generadas en menos de un segundo. Ocho artículos por idioma, distribuidos en cuatro secciones: Fiestas, Turismo, Gastronomía y Cultura. Una agenda de eventos. Una guía de lugares de la provincia. Un quiz sobre la ciudad.
+
+La home tiene un artículo destacado con foto grande, cinco más en grid, y una sección introductoria que explica qué es el proyecto en los tres idiomas. "Ver todos los artículos" lleva a una página de archivo real. El diseño es responsive y las animaciones del hero funcionan bien en móvil.
+
+Los artículos son, por ahora, generados. No vienen de la base de datos original — esa es inaccesible desde aquí — sino escritos a partir del conocimiento de Cádiz y de la documentación del proyecto. Cuando el agente OpenClaw entre en escena, los reemplazará con contenido real, actual, con imágenes propias generadas por IA.
+
+Ese es el siguiente capítulo. Este diario lo contará.
+
+---
+
+*Última actualización: 19 de marzo de 2026.*
