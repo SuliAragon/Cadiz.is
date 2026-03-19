@@ -18,7 +18,7 @@
       "type": "playa",
       "latitude": 36.5271,
       "longitude": -6.3097,
-      "image": "/images/places/playa-la-caleta.jpg",
+      "image": "/images/places/playa-la-caleta.png",
       "isFeatured": true
     },
     {
@@ -38,7 +38,7 @@
       "type": "monumento",
       "latitude": 36.5289,
       "longitude": -6.2942,
-      "image": "/images/places/catedral-cadiz.jpg",
+      "image": "/images/places/catedral-cadiz.png",
       "isFeatured": true
     },
     {
@@ -58,7 +58,7 @@
       "type": "mirador",
       "latitude": 36.5319,
       "longitude": -6.2958,
-      "image": "/images/places/torre-tavira.jpg",
+      "image": "/images/places/torre-tavira.png",
       "isFeatured": true
     },
     {
@@ -78,7 +78,7 @@
       "type": "playa",
       "latitude": 36.0896,
       "longitude": -5.7885,
-      "image": "/images/places/playa-bolonia.jpg",
+      "image": "/images/places/playa-bolonia.png",
       "isFeatured": false
     },
     {
@@ -98,7 +98,7 @@
       "type": "naturaleza",
       "latitude": 36.1846,
       "longitude": -5.9715,
-      "image": "/images/places/parque-natural-brena.jpg",
+      "image": "/images/places/parque-natural-brena.png",
       "isFeatured": false
     },
     {
@@ -118,7 +118,7 @@
       "type": "gastronomia",
       "latitude": 36.5327,
       "longitude": -6.2983,
-      "image": "/images/places/mercado-central.jpg",
+      "image": "/images/places/mercado-central.png",
       "isFeatured": false
     }
   ]

@@ -5,7 +5,7 @@ excerpt: "Cádiz fue fundada por los fenicios alrededor del año 1100 a.C., lo q
 category: "cultura"
 author: "isabel-vega"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/cultura.jpg"
+image: "/images/articles/cultura.png"
 imageAlt: "Vista panorámica del casco histórico de Cádiz con la Catedral Nueva y el Atlántico"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

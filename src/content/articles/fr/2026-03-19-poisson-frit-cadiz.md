@@ -5,7 +5,7 @@ excerpt: "Peu de plats en Espagne concentrent autant d'identité dans aussi peu 
 category: "gastronomia"
 author: "carmen-ruiz"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/gastronomia.jpg"
+image: "/images/articles/gastronomia.png"
 imageAlt: "Cornet de papier kraft rempli de poisson frit assorti sortant de la friteuse à Cadix"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

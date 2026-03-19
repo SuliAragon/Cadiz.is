@@ -5,7 +5,7 @@ excerpt: "La Semaine Sainte de Cadix est l'une des plus anciennes d'Andalousie. 
 category: "fiestas"
 author: "rocio-fernandez"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/fiestas.jpg"
+image: "/images/articles/fiestas.png"
 imageAlt: "Procession de la Semaine Sainte à Cadix avec la mer en arrière-plan au crépuscule"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

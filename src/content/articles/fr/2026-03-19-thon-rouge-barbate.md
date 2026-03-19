@@ -5,7 +5,7 @@ excerpt: "Chaque printemps, les thons rouges de l'Atlantique traversent le Détr
 category: "gastronomia"
 author: "carmen-ruiz"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/gastronomia.jpg"
+image: "/images/articles/gastronomia.png"
 imageAlt: "Thon rouge fraîchement capturé à l'almadraba sur les côtes de Barbate, Cadix"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

@@ -5,7 +5,7 @@ excerpt: "Pocos platos en España concentran tanta identidad en tan poco espacio
 category: "gastronomia"
 author: "carmen-ruiz"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/gastronomia.jpg"
+image: "/images/articles/gastronomia.png"
 imageAlt: "Cono de papel de estraza con pescaíto frito variado recién salido de la freidora en Cádiz"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

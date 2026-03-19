@@ -5,7 +5,7 @@ excerpt: "Cada febrero, Cádiz se convierte en la capital mundial de la ironía,
 category: "fiestas"
 author: "rocio-fernandez"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/fiestas.jpg"
+image: "/images/articles/fiestas.png"
 imageAlt: "Comparsa del Carnaval de Cádiz desfilando por las calles del casco antiguo"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

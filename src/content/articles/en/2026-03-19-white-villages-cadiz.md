@@ -5,7 +5,7 @@ excerpt: "Perched in the mountains of Cádiz province, the white villages are on
 category: "turismo"
 author: "antonio-garcia"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/turismo.jpg"
+image: "/images/articles/turismo.png"
 imageAlt: "Panoramic view of a white village in Cádiz perched on a mountain with whitewashed houses"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

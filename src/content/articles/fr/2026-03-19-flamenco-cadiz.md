@@ -5,7 +5,7 @@ excerpt: "Cadix est l'un des berceaux du flamenco. Pas un berceau métaphorique 
 category: "cultura"
 author: "isabel-vega"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/cultura.jpg"
+image: "/images/articles/cultura.png"
 imageAlt: "Danseuse de flamenco dans un tablao du vieux centre de Cadix en robe à pois"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

@@ -5,7 +5,7 @@ excerpt: "Perchés dans les montagnes de la province de Cadix, les villages blan
 category: "turismo"
 author: "antonio-garcia"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/turismo.jpg"
+image: "/images/articles/turismo.png"
 imageAlt: "Vue panoramique d'un village blanc de Cadix perché sur la sierra avec des maisons blanchies à la chaux"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

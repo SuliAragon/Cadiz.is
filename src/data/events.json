@@ -24,7 +24,7 @@
       "startTime": "18:00",
       "category": "fiestas",
       "isFeatured": true,
-      "image": "/images/events/semana-santa-2026.jpg",
+      "image": "/images/events/semana-santa-2026.png",
       "isAiGenerated": false
     },
     {
@@ -50,7 +50,7 @@
       "startTime": "12:00",
       "category": "fiestas",
       "isFeatured": false,
-      "image": "/images/events/feria-jerez-2026.jpg",
+      "image": "/images/events/feria-jerez-2026.png",
       "isAiGenerated": false
     },
     {
@@ -76,7 +76,7 @@
       "startTime": "20:00",
       "category": "cultura",
       "isFeatured": false,
-      "image": "/images/events/festival-flamenco-2026.jpg",
+      "image": "/images/events/festival-flamenco-2026.png",
       "isAiGenerated": false
     },
     {
@@ -102,7 +102,7 @@
       "startTime": null,
       "category": "gastronomia",
       "isFeatured": false,
-      "image": "/images/events/ruta-atun-2026.jpg",
+      "image": "/images/events/ruta-atun-2026.png",
       "isAiGenerated": false
     }
   ]

@@ -5,7 +5,7 @@ excerpt: "Every February, Cádiz becomes the world capital of irony, wit and fre
 category: "fiestas"
 author: "rocio-fernandez"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/fiestas.jpg"
+image: "/images/articles/fiestas.png"
 imageAlt: "A comparsa from the Cádiz Carnival parading through the streets of the old town"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

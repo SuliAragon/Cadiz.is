@@ -5,7 +5,7 @@ excerpt: "Cádiz was founded by the Phoenicians around 1100 BC, making it the ol
 category: "cultura"
 author: "isabel-vega"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/cultura.jpg"
+image: "/images/articles/cultura.png"
 imageAlt: "Panoramic view of the historic centre of Cádiz with the New Cathedral and the Atlantic Ocean"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

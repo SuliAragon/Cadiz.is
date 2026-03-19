@@ -5,7 +5,7 @@ excerpt: "Cada primavera, los atunes rojos del Atlántico cruzan el Estrecho de 
 category: "gastronomia"
 author: "carmen-ruiz"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/gastronomia.jpg"
+image: "/images/articles/gastronomia.png"
 imageAlt: "Atún rojo de almadraba recién capturado en las costas de Barbate, Cádiz"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

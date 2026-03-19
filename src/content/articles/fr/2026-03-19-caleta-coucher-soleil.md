@@ -5,7 +5,7 @@ excerpt: "Il y a quelque chose de magique à la plage de La Caleta lorsque le so
 category: "turismo"
 author: "ana-sanchez"
 publishedAt: "2026-03-19T18:00:00Z"
-image: "/images/articles/caleta-puesta-de-sol.jpg"
+image: "/images/articles/caleta-puesta-de-sol.png"
 imageAlt: "Coucher de soleil sur la plage de La Caleta avec les châteaux en arrière-plan"
 imageCredit: "Image générée par IA (fal.ai FLUX.1)"
 isAiGenerated: true

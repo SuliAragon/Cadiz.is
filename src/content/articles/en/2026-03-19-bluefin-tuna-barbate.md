@@ -5,7 +5,7 @@ excerpt: "Every spring, Atlantic bluefin tuna cross the Strait of Gibraltar on t
 category: "gastronomia"
 author: "carmen-ruiz"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/gastronomia.jpg"
+image: "/images/articles/gastronomia.png"
 imageAlt: "Freshly caught almadraba bluefin tuna on the coast of Barbate, Cádiz"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

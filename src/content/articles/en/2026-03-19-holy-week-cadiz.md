@@ -5,7 +5,7 @@ excerpt: "Holy Week in Cádiz is one of the oldest in Andalusia. Processions tha
 category: "fiestas"
 author: "rocio-fernandez"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/fiestas.jpg"
+image: "/images/articles/fiestas.png"
 imageAlt: "Holy Week procession in Cádiz with the sea in the background at dusk"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

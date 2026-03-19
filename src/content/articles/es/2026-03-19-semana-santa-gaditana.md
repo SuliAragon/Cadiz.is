@@ -5,7 +5,7 @@ excerpt: "La Semana Santa gaditana es una de las más antiguas de Andalucía. Pr
 category: "fiestas"
 author: "rocio-fernandez"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/fiestas.jpg"
+image: "/images/articles/fiestas.png"
 imageAlt: "Procesión de Semana Santa en Cádiz con el mar de fondo al atardecer"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

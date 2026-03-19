@@ -5,7 +5,7 @@ excerpt: "Encaramados en las sierras de la provincia de Cádiz, los pueblos blan
 category: "turismo"
 author: "antonio-garcia"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/turismo.jpg"
+image: "/images/articles/turismo.png"
 imageAlt: "Panorámica de un pueblo blanco gaditano encaramado en la sierra con casas encaladas"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

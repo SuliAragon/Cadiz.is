@@ -5,7 +5,7 @@ excerpt: "Chaque février, Cadix devient la capitale mondiale de l'ironie, de l'
 category: "fiestas"
 author: "rocio-fernandez"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/fiestas.jpg"
+image: "/images/articles/fiestas.png"
 imageAlt: "Une comparsa du Carnaval de Cadix défilant dans les rues du vieux centre"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

@@ -5,7 +5,7 @@ excerpt: "Cadix a été fondée par les Phéniciens vers 1100 av. J.-C., ce qui 
 category: "cultura"
 author: "isabel-vega"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/cultura.jpg"
+image: "/images/articles/cultura.png"
 imageAlt: "Vue panoramique du centre historique de Cadix avec la Cathédrale Nouvelle et l'Atlantique"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false

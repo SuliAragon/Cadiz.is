@@ -5,7 +5,7 @@ excerpt: "Cádiz is one of the birthplaces of flamenco. Not a metaphorical birth
 category: "cultura"
 author: "isabel-vega"
 publishedAt: "2026-03-19T10:00:00Z"
-image: "/images/articles/cultura.jpg"
+image: "/images/articles/cultura.png"
 imageAlt: "Flamenco dancer in a tablao in the old town of Cádiz wearing a spotted dress"
 imageCredit: "Image from cadiz.is"
 isAiGenerated: false
