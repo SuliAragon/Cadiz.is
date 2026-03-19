@@ -1,0 +1,36 @@
+name: Daily Content Generator
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # 7am UTC = 8am hora española (9am en verano)
+  workflow_dispatch:       # permite lanzarlo manualmente desde GitHub
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install openai requests beautifulsoup4 fal-client
+
+      - name: Ejecutar script de contenido
+        run: python scripts/generate_content.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+
+      - name: Commit y push si hay cambios
+        run: |
+          git config user.name "cadiz-is-bot"
+          git config user.email "bot@cadiz.is"
+          git add src/content/articles/ public/images/articles/ src/data/events.json public/images/events/
+          git diff --staged --quiet || git commit -m "content: auto-update $(date +%Y-%m-%d)"
+          git push
