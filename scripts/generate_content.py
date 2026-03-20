@@ -45,11 +45,17 @@ def articles_to_generate() -> int:
             return min(days_missed, 7)
     return 1
 
-# ── Sección rotante por fecha ──────────────────────────────────
+# ── Sección rotante por último artículo ───────────────────────
 def next_section() -> str:
-    # Usa el número de día del año para rotar — siempre predecible
-    day_of_year = datetime.date.today().timetuple().tm_yday
-    return SECTIONS[day_of_year % len(SECTIONS)]
+    files = sorted(ARTICLES_ES.glob("*.md"), reverse=True)
+    if not files:
+        return SECTIONS[0]
+    for line in files[0].read_text().splitlines():
+        if line.startswith("category:"):
+            last = line.split(":", 1)[1].strip().strip('"')
+            idx = SECTIONS.index(last) if last in SECTIONS else -1
+            return SECTIONS[(idx + 1) % len(SECTIONS)]
+    return SECTIONS[0]
 
 # ── Scraping de noticias ───────────────────────────────────────
 def fetch_news(section: str) -> dict | None:
