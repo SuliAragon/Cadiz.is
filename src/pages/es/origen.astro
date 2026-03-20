@@ -1,0 +1,369 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'es';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout lang={lang} title="Origen — cadiz.is" description="Cómo se construyó cadiz.is: las decisiones, los errores, los costes y el resultado.">
+  <div class="container section origin-page">
+
+    <!-- CABECERA -->
+    <div class="origin-header">
+      <h1 class="origin-header__title">Cómo se hizo <span>cadiz.is</span></h1>
+      <p class="origin-header__lead">
+        Un portal sobre la ciudad más antigua de Occidente, construido sin servidor, sin base de datos,
+        y con más ganas que presupuesto. Esta página cuenta todo el proceso: las decisiones, los errores,
+        los costes y el resultado.
+      </p>
+      <p class="origin-header__note">
+        Esta página no se actualiza automáticamente. Es un registro fijo de cómo se llegó hasta aquí.
+      </p>
+    </div>
+
+    <!-- CREADOR -->
+    <section class="origin-creator">
+      <img
+        src={`${base}/images/about/jesus-aragon.jpg`}
+        alt="Jesús Aragón, creador de cadiz.is"
+        class="origin-creator__photo"
+      />
+      <div class="origin-creator__bio">
+        <h2 class="origin-creator__name">Jesús Aragón</h2>
+        <p class="origin-creator__role">Creador de cadiz.is</p>
+        <p class="origin-creator__text">
+          Desarrollador, gaditano de adopción y responsable de que este proyecto exista.
+          La idea de cadiz.is nació de una convicción simple: Cádiz merece un portal a la altura de su historia.
+          Una ciudad de 3.000 años que aparece en Google con fotos de stock y artículos de 2015 merece algo mejor.
+          Este es ese intento.
+        </p>
+      </div>
+    </section>
+
+    <!-- INVERSIÓN -->
+    <section class="origin-section">
+      <h2 class="origin-section__title">La inversión</h2>
+      <p class="origin-section__lead">Transparencia total. Esto es lo que ha costado cadiz.is hasta hoy:</p>
+      <div class="origin-table-wrap">
+        <table class="origin-table">
+          <thead>
+            <tr><th>Concepto</th><th>Coste</th><th>Notas</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Hosting (GitHub Pages)</td><td class="highlight">Gratis</td><td>Repos públicos, sin límite</td></tr>
+            <tr><td>Framework (Astro)</td><td class="highlight">Gratis</td><td>Open source</td></tr>
+            <tr><td>Dominio cadizis.com</td><td>Pendiente</td><td>~$12/año cuando se compre</td></tr>
+            <tr><td>fal.ai — imágenes IA</td><td>$20</td><td>~800 imágenes con Flux Dev</td></tr>
+            <tr><td>OpenAI API — textos IA</td><td>$10</td><td>+4 años de artículos diarios</td></tr>
+            <tr class="total"><td><strong>Total hasta hoy</strong></td><td><strong>~$30</strong></td><td>Sin suscripciones mensuales</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TECNOLOGÍA -->
+    <section class="origin-section">
+      <h2 class="origin-section__title">La tecnología</h2>
+      <div class="origin-table-wrap">
+        <table class="origin-table">
+          <thead>
+            <tr><th>Elemento</th><th>Decisión</th><th>Por qué</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Framework</td><td><strong>Astro 4</strong></td><td>HTML puro en build, casi sin JS en cliente</td></tr>
+            <tr><td>Hosting</td><td><strong>GitHub Pages</strong></td><td>Gratis, versionado, automático</td></tr>
+            <tr><td>CI/CD</td><td><strong>GitHub Actions</strong></td><td>Deploy automático en cada push</td></tr>
+            <tr><td>Contenido</td><td><strong>Markdown + JSON</strong></td><td>Sin base de datos, editable desde cualquier editor</td></tr>
+            <tr><td>Idiomas</td><td><strong>ES + EN</strong></td><td>i18n nativo de Astro con prefijo de ruta</td></tr>
+            <tr><td>Fuentes</td><td><strong>Lora + Nunito Sans</strong></td><td>Identidad propia, diferenciada</td></tr>
+            <tr><td>Imágenes IA</td><td><strong>fal.ai Flux Dev</strong></td><td>Mejor ratio calidad/precio</td></tr>
+            <tr><td>Textos IA</td><td><strong>OpenAI GPT-4o</strong></td><td>Generación y traducción de artículos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section class="origin-section">
+      <h2 class="origin-section__title">El punto de partida</h2>
+      <div class="origin-prose">
+        <p>Todo empezó con una web que ya existía.</p>
+        <p>
+          <code>WebBlogCadiz.is</code> era un blog sobre Cádiz construido con Django y React — funcional, completo,
+          con base de datos, con autores, con categorías. Una arquitectura sólida para una redacción de verdad.
+          El problema era ese precisamente: requería servidor, mantenimiento, costes mensuales, y una infraestructura
+          que pesaba demasiado para un proyecto que en ese momento todavía estaba encontrando su camino.
+        </p>
+        <p>La pregunta que me hice fue sencilla: ¿y si lo convierto en estático?</p>
+        <p>
+          No como una rebaja. Como una decisión estratégica. Un sitio estático bien hecho puede tener el mismo
+          aspecto, la misma estructura, el mismo alma que uno dinámico. Y puede vivir gratis en GitHub Pages,
+          versionado en Git, sin ningún servidor que mantener. El contenido en Markdown. Los datos en JSON.
+          El código en un repositorio público.
+        </p>
+      </div>
+    </section>
+
+    <section class="origin-section">
+      <h2 class="origin-section__title">Los primeros tropiezos</h2>
+      <div class="origin-prose">
+        <p>Construir algo desde cero siempre tiene sus momentos. El primero llegó casi de inmediato.</p>
+        <p>
+          Astro reserva internamente el campo <code>slug</code> en sus colecciones de contenido.
+          Lo había usado en el frontmatter de los artículos con toda la naturalidad del mundo, y el sistema
+          me devolvió un error que al principio no entendí. La solución fue renombrarlo a <code>articleSlug</code>.
+        </p>
+        <p>
+          El segundo problema fue más tonto: había puesto los archivos JSON dentro de <code>src/content/</code>,
+          que es la carpeta que Astro reserva para sus colecciones. Los moví a <code>src/data/</code> y todo volvió
+          a funcionar. A veces los errores más frustrantes tienen las soluciones más simples.
+        </p>
+        <p>
+          Luego vino GitHub Pages: <code>node_modules/</code> y <code>dist/</code> estaban dentro del repositorio.
+          Miles de archivos. Tuve que limpiar el historial con <code>git rm --cached</code> y hacer un commit
+          que borró más de 10.000 archivos de golpe. Un poco de vergüenza, mucho aprendizaje.
+        </p>
+      </div>
+    </section>
+
+    <section class="origin-section">
+      <h2 class="origin-section__title">El dominio que no era mío</h2>
+      <div class="origin-prose">
+        <p>
+          En un momento de euforia configuré <code>cadiz.is</code> como dominio personalizado en GitHub Pages.
+          GitHub me respondió con un <code>InvalidDNSError</code>. Lógico: para configurar un dominio personalizado
+          primero hay que poseerlo.
+        </p>
+        <p>
+          El TLD <code>.is</code> pertenece a Islandia. Caro. De momento la web vive en
+          <code>suliaragon.github.io/Cadiz.is</code>. La alternativa elegida para cuando llegue el momento
+          es <code>cadizis.com</code> — dice literalmente "Cádiz is", mantiene el juego de palabras del
+          word slider del hero, y un <code>.com</code> es accesible.
+        </p>
+      </div>
+    </section>
+
+    <section class="origin-section">
+      <h2 class="origin-section__title">Las imágenes que no eran imágenes</h2>
+      <div class="origin-prose">
+        <p>
+          Con <code>base: '/Cadiz.is'</code> configurado en Astro, todos los estáticos se sirven bajo ese prefijo.
+          Los componentes usaban rutas como <code>/images/articles/caleta.jpg</code> sin él. El fix fue añadir
+          <code>import.meta.env.BASE_URL</code> a cada <code>src</code> de imagen.
+        </p>
+        <p>
+          Pero había otro problema: los archivos <code>.jpg</code> copiados del sitio dinámico pesaban 1.9KB.
+          No eran imágenes reales — eran thumbnails corruptos. Los <code>.png</code> del mismo directorio,
+          esos sí eran las imágenes reales, con sus 600–800KB. Los copié, actualicé todas las referencias,
+          y las fotos aparecieron por fin.
+        </p>
+        <p>Esa fue la primera vez que vi la web con imágenes de verdad. Merece la pena recordarlo.</p>
+      </div>
+    </section>
+
+    <section class="origin-section">
+      <h2 class="origin-section__title">El momento malaga.is</h2>
+      <div class="origin-prose">
+        <p>
+          En algún punto me fijé en que <code>cadiz.is</code> y <code>malaga.is</code> se parecían bastante.
+          Mismas fuentes — Playfair Display e Inter. Mismo color exacto: <code>#e07a5f</code>. Quiz interactivo.
+          Layout de cards.
+        </p>
+        <p>
+          No era una copia, pero era una inspiración demasiado evidente. Cambié las fuentes a
+          <strong>Lora + Nunito Sans</strong>, la paleta a <code>#d4622a</code> + <code>#c9a84c</code> (oro gaditano)
+          y el fondo a un <code>#fdf8f0</code> de arena cálida. La web sigue siendo parecida en estructura
+          — porque las dos son blogs editoriales de ciudad. Pero ya no se confunden.
+        </p>
+      </div>
+    </section>
+
+    <section class="origin-section">
+      <h2 class="origin-section__title">La automatización</h2>
+      <div class="origin-prose">
+        <p>
+          La parte más ambiciosa llegó después de tener la estructura montada: que la web se actualice sola,
+          todos los días, sin intervención humana.
+        </p>
+        <p>
+          Un script Python corre cada mañana a las 8am en los servidores de GitHub. Visita
+          Diario de Cádiz y La Voz Digital, filtra noticias positivas y turísticas, genera un artículo
+          completo en español e inglés con GPT-4o, crea una imagen relacionada con fal.ai Flux Dev,
+          y hace un commit al repositorio. GitHub Actions lo despliega automáticamente.
+        </p>
+        <p>El coste de todo esto: menos de un céntimo al día.</p>
+        <p>
+          No hay servidor. No hay panel de administración. No hay base de datos. Solo código, APIs
+          y un repositorio en GitHub que hace el resto.
+        </p>
+      </div>
+    </section>
+
+    <section class="origin-section">
+      <h2 class="origin-section__title">El estado actual</h2>
+      <div class="origin-prose">
+        <p>
+          Hoy <code>cadiz.is</code> tiene 34 páginas en dos idiomas (español e inglés), distribuidas en
+          cuatro secciones: Fiestas, Turismo, Gastronomía y Cultura. Una agenda de eventos con limpieza
+          automática de fechas pasadas. Una guía de lugares de la provincia. Un quiz sobre la ciudad.
+        </p>
+        <p>
+          La home tiene un artículo destacado con foto grande y cinco más en grid. El diseño es responsive.
+          Y cada mañana a las 8am, sin que nadie lo pida, aparece un artículo nuevo.
+        </p>
+      </div>
+    </section>
+
+    <p class="origin-updated">Última actualización: 20 de marzo de 2026.</p>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .origin-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  /* CABECERA */
+  .origin-header {
+    margin-bottom: 3.5rem;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 2rem;
+  }
+  .origin-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .origin-header__title span { color: var(--accent); }
+  .origin-header__lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .origin-header__note {
+    display: inline-block;
+    background: var(--accent-gold);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  /* CREADOR */
+  .origin-creator {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 3.5rem;
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+  }
+  .origin-creator__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--accent-gold);
+  }
+  .origin-creator__name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+  }
+  .origin-creator__role {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .origin-creator__text {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 0.97rem;
+  }
+  @media (max-width: 600px) {
+    .origin-creator { flex-direction: column; align-items: center; text-align: center; }
+  }
+
+  /* SECCIONES */
+  .origin-section {
+    margin-bottom: 3rem;
+  }
+  .origin-section__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .origin-section__lead {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  /* TABLAS */
+  .origin-table-wrap {
+    overflow-x: auto;
+  }
+  .origin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .origin-table th {
+    background: var(--accent);
+    color: #fff;
+    text-align: left;
+    padding: 0.65rem 1rem;
+    font-weight: 600;
+  }
+  .origin-table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .origin-table tr:last-child td { border-bottom: none; }
+  .origin-table tr:hover td { background: var(--bg-alt, #f5f0e8); }
+  .origin-table td.highlight { color: var(--accent); font-weight: 700; }
+  .origin-table tr.total td { background: var(--surface); font-size: 1rem; }
+
+  /* PROSA */
+  .origin-prose p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .origin-prose code {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.15em 0.45em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--accent-warm);
+  }
+
+  /* PIE */
+  .origin-updated {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

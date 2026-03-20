@@ -9,7 +9,8 @@
     "gastronomy": "Food",
     "culture": "Culture",
     "agenda": "Events",
-    "places": "Places"
+    "places": "Places",
+    "origin": "Origin"
   },
   "footer": {
     "tagline": "The light of Cádiz, in every story.",
