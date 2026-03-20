@@ -5,11 +5,21 @@ on:
     - cron: '0 7 * * *'  # 7am UTC = 8am hora española (9am en verano)
   workflow_dispatch:       # permite lanzarlo manualmente desde GitHub
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  generate:
+  generate-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repo
@@ -20,7 +30,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instalar dependencias
+      - name: Instalar dependencias Python
         run: pip install openai requests beautifulsoup4 fal-client
 
       - name: Ejecutar script de contenido
@@ -29,10 +39,31 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
 
-      - name: Commit y push si hay cambios
+      - name: Commit y push del nuevo contenido
         run: |
           git config user.name "cadiz-is-bot"
           git config user.email "bot@cadiz.is"
           git add src/content/articles/ public/images/articles/ src/data/events.json public/images/events/
           git diff --staged --quiet || git commit -m "content: auto-update $(date +%Y-%m-%d)"
           git push
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Instalar dependencias Node
+        run: npm ci
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
