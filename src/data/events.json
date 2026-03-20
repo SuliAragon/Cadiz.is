@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T00:13:24.191569Z",
+  "lastUpdated": "2026-03-20T01:12:16.991633Z",
   "events": [
     {
       "id": "semana-santa-2026",
@@ -69,6 +69,29 @@
       "isFeatured": false,
       "image": "/images/events/ruta-atun-2026.png",
       "isAiGenerated": false
+    },
+    {
+      "id": "festival-gastronomico-cadiz-2027",
+      "slug": "festival-gastronomico-cadiz-2027",
+      "title": {
+        "es": "Festival Gastronómico de Cádiz 2027",
+        "en": "Cádiz Gastronomic Festival 2027"
+      },
+      "description": {
+        "es": "Disfruta de un recorrido culinario por las delicias gaditanas con degustaciones, talleres y música en vivo.",
+        "en": "Enjoy a culinary journey through Cádiz's delights with tastings, workshops, and live music."
+      },
+      "locationName": {
+        "es": "Parque Genovés, Cádiz",
+        "en": "Genovés Park, Cádiz"
+      },
+      "startDate": "2027-04-15",
+      "endDate": "2027-04-16",
+      "startTime": "12:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/festival-gastronomico-cadiz-2027.png",
+      "isAiGenerated": true
     }
   ]
 }
