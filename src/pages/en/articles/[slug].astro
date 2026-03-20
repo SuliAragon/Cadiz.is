@@ -36,7 +36,6 @@ const author = authorsData.authors.find((a) => a.id === data.author);
     <header class="article-detail__header">
       <div class="article-detail__meta">
         {data.category && <Badge category={data.category} label={categoryName} />}
-        {data.isAiGenerated && <AiBadge lang={lang} />}
       </div>
       <h1 class="article-detail__title">{data.title}</h1>
       <p class="article-detail__excerpt">{data.excerpt}</p>
