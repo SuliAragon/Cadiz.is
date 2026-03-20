@@ -20,7 +20,10 @@ const { place, lang } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const name = place.name[lang] ?? place.name.es ?? '';
 const description = place.description[lang] ?? place.description.es ?? '';
-const shortDesc = description.length > 140 ? description.substring(0, 140) + '…' : description;
+const MAX = 110;
+const shortDesc = description.length > MAX
+  ? description.substring(0, description.lastIndexOf(' ', MAX)) + '…'
+  : description;
 ---
 
 <div class="place-card">
