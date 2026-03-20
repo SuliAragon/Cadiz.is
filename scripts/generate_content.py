@@ -37,7 +37,7 @@ def articles_to_generate() -> int:
     for line in files[0].read_text().splitlines():
         if line.startswith("publishedAt:"):
             date_str = line.split(":", 1)[1].strip().strip('"')
-            last_date = datetime.date.fromisoformat(date_str)
+            last_date = datetime.date.fromisoformat(date_str[:10])
             days_missed = (datetime.date.today() - last_date).days
             return min(max(days_missed, 1), 7)
     return 1
