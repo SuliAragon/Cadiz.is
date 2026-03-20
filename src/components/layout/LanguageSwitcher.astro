@@ -9,17 +9,31 @@ interface Props {
 const { lang, currentPath } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
+// Segments that differ between languages: es → en
+const ROUTE_MAP: Record<string, string> = {
+  articulos: 'articles',
+  lugares:   'places',
+  origen:    'origin',
+};
+const ROUTE_MAP_REVERSE: Record<string, string> = Object.fromEntries(
+  Object.entries(ROUTE_MAP).map(([k, v]) => [v, k])
+);
+
 function switchLang(targetLang: Lang): string {
-  // Replace language segment in path
   const langs: Lang[] = ['es', 'en'];
   let path = currentPath;
   for (const l of langs) {
     if (path.includes(`/${l}/`) || path.endsWith(`/${l}`)) {
       path = path.replace(`/${l}`, `/${targetLang}`);
-      return path;
+      break;
     }
   }
-  return `${base}/${targetLang}/`;
+  // Translate path segments that differ between languages
+  const map = targetLang === 'en' ? ROUTE_MAP : ROUTE_MAP_REVERSE;
+  for (const [from, to] of Object.entries(map)) {
+    path = path.replace(`/${from}/`, `/${to}/`).replace(`/${from}`, `/${to}`);
+  }
+  return path;
 }
 
 const langs: { code: Lang; label: string }[] = [
