@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T08:00:00Z",
+  "lastUpdated": "2026-03-20T00:13:24.191569Z",
   "events": [
     {
       "id": "semana-santa-2026",
@@ -45,29 +45,6 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/feria-jerez-2026.png",
-      "isAiGenerated": false
-    },
-    {
-      "id": "festival-flamenco-2026",
-      "slug": "festival-flamenco-jerez-2026",
-      "title": {
-        "es": "Festival de Jerez 2026",
-        "en": "Jerez Flamenco Festival 2026"
-      },
-      "description": {
-        "es": "El Festival de Jerez es la cita internacional del flamenco más importante del mundo, con actuaciones de los mejores artistas.",
-        "en": "The Jerez Festival is the world's most important international flamenco event, featuring performances by the best artists."
-      },
-      "locationName": {
-        "es": "Jerez de la Frontera",
-        "en": "Jerez de la Frontera"
-      },
-      "startDate": "2026-02-27",
-      "endDate": "2026-03-15",
-      "startTime": "20:00",
-      "category": "cultura",
-      "isFeatured": false,
-      "image": "/images/events/festival-flamenco-2026.png",
       "isAiGenerated": false
     },
     {
