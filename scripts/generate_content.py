@@ -39,7 +39,10 @@ def articles_to_generate() -> int:
             date_str = line.split(":", 1)[1].strip().strip('"')
             last_date = datetime.date.fromisoformat(date_str[:10])
             days_missed = (datetime.date.today() - last_date).days
-            return min(max(days_missed, 1), 7)
+            if days_missed == 0:
+                print("  Ya hay un artículo de hoy. Nada que generar.")
+                return 0
+            return min(days_missed, 7)
     return 1
 
 # ── Sección rotante ────────────────────────────────────────────
