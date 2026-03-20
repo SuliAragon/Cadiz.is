@@ -100,7 +100,7 @@ def fetch_news(section: str) -> dict | None:
 
 # ── Generación de artículo con OpenAI ─────────────────────────
 def generate_article(section: str, news: dict | None) -> dict:
-    today   = datetime.date.today().isoformat()
+    today   = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     context = (f"Noticia de referencia: {news['title']} ({news['url']})"
                if news else
                f"Genera una noticia positiva y actual sobre {section} en Cádiz o su provincia.")
@@ -149,7 +149,8 @@ Respond ONLY in JSON:
     return {
         "slug":         data_es["slug"],
         "section":      section,
-        "date":         today,
+        "date":         today[:10],   # YYYY-MM-DD para el nombre del fichero
+        "publishedAt":  today,        # datetime completo para el orden
         "image_prompt": data_es["image_prompt"],
         "es": {"title": data_es["title"], "excerpt": data_es["excerpt"], "body": data_es["body"]},
         "en": {"title": data_en["title"], "excerpt": data_en["excerpt"], "body": data_en["body"]},
@@ -179,10 +180,11 @@ def generate_image(image_prompt: str, slug: str) -> str | None:
 
 # ── Escribir archivos Markdown ─────────────────────────────────
 def write_markdown(article: dict, image_path: str | None):
-    slug    = article["slug"]
-    date    = article["date"]
-    section = article["section"]
-    img     = image_path or "/images/articles/placeholder.png"
+    slug        = article["slug"]
+    date        = article["date"]         # YYYY-MM-DD (nombre fichero)
+    publishedAt = article["publishedAt"]  # datetime completo (orden)
+    section     = article["section"]
+    img         = image_path or "/images/articles/placeholder.png"
 
     for lang, data in [("es", article["es"]), ("en", article["en"])]:
         folder   = ARTICLES_ES if lang == "es" else ARTICLES_EN
@@ -192,7 +194,7 @@ title: "{data['title']}"
 articleSlug: "{slug}"
 excerpt: "{data['excerpt']}"
 category: "{section}"
-publishedAt: "{date}"
+publishedAt: "{publishedAt}"
 image: "{img}"
 author: "cadiz.is"
 lang: "{lang}"

@@ -41,6 +41,8 @@ export const CATEGORIES = {
   turismo:    { es: 'Turismo',     en: 'Tourism',   color: '#0466c8' },
   gastronomia:{ es: 'Gastronomía', en: 'Food',      color: '#10b981' },
   cultura:    { es: 'Cultura',     en: 'Culture',   color: '#a855f7' },
+  agenda:     { es: 'Agenda',      en: 'Events',    color: '#f59e0b' },
+  lugares:    { es: 'Lugares',     en: 'Places',    color: '#06b6d4' },
 } as const;
 
 export type Category = keyof typeof CATEGORIES;
