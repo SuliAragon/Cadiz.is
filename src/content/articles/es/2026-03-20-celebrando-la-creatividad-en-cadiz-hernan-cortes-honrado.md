@@ -3,7 +3,7 @@ title: "Celebrando la Creatividad en Cádiz: Hernán Cortés Honrado con el Prim
 articleSlug: "celebrando-la-creatividad-en-cadiz-hernan-cortes-honrado"
 excerpt: "Hernán Cortés recibe el primer Premio Andaluz de las Bellas Artes, un reconocimiento a su destacada contribución artístico-cultural que refuerza el vibrante espíritu de Cádiz."
 category: "cultura"
-publishedAt: "2026-03-20"
+publishedAt: "2026-03-20T00:05:00Z"
 image: "/images/articles/celebrando-la-creatividad-en-cadiz-hernan-cortes-honrado.png"
 author: "cadiz.is"
 lang: "es"

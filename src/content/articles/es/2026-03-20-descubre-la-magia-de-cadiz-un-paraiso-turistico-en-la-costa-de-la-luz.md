@@ -3,7 +3,7 @@ title: "Descubre la magia de Cádiz: Un paraíso turístico en la Costa de la Lu
 articleSlug: "descubre-la-magia-de-cadiz-un-paraiso-turistico-en-la-costa-de-la-luz"
 excerpt: "Cádiz, con su rica historia y encanto costero, ofrece una experiencia inolvidable para todo viajero. Un destino imprescindible donde la cultura y la hospitalidad se encuentran."
 category: "turismo"
-publishedAt: "2026-03-20"
+publishedAt: "2026-03-19T23:16:00Z"
 image: "/images/articles/placeholder.png"
 author: "cadiz.is"
 lang: "es"

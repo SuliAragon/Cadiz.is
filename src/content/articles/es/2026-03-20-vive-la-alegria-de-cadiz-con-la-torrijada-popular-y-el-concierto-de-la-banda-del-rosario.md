@@ -3,7 +3,7 @@ title: "Vive la Alegría de Cádiz con la Torrijada Popular y el Concierto de la
 articleSlug: "vive-la-alegria-de-cadiz-con-la-torrijada-popular-y-el-concierto-de-la-banda-del-rosario"
 excerpt: "Descubre la vibrante cultura gaditana con un evento que combina dulces tradiciones y música en vivo este viernes 20 de marzo."
 category: "agenda"
-publishedAt: "2026-03-20"
+publishedAt: "2026-03-20T01:10:00Z"
 image: "/images/articles/vive-la-alegria-de-cadiz-con-la-torrijada-popular-y-el-concierto-de-la-banda-del-rosario.png"
 author: "cadiz.is"
 lang: "es"

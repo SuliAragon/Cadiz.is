@@ -3,7 +3,7 @@ title: "Experience the Joy of Cádiz with the Popular Torrijada and the Rosario 
 articleSlug: "vive-la-alegria-de-cadiz-con-la-torrijada-popular-y-el-concierto-de-la-banda-del-rosario"
 excerpt: "Cádiz, a city known for its warm and festive atmosphere, invites locals and visitors to enjoy a magical evening full of tradition and music."
 category: "agenda"
-publishedAt: "2026-03-20"
+publishedAt: "2026-03-20T01:10:00Z"
 image: "/images/articles/vive-la-alegria-de-cadiz-con-la-torrijada-popular-y-el-concierto-de-la-banda-del-rosario.png"
 author: "cadiz.is"
 lang: "en"

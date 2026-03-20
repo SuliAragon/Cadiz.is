@@ -3,7 +3,7 @@ title: "Celebrating Creativity in Cádiz: Hernán Cortés Honored with the First
 articleSlug: "celebrando-la-creatividad-en-cadiz-hernan-cortes-honrado"
 excerpt: "The city of Cádiz, known for its rich history and vibrant culture, proudly celebrates the recognition given to the distinguished artist Hernán Cortés, who was recently honored with the first Andalusian Fine Arts Award. This award not only honors Cortés' remarkable career but also highlights the importance of art and culture in the Andalusian region."
 category: "cultura"
-publishedAt: "2026-03-20"
+publishedAt: "2026-03-20T00:05:00Z"
 image: "/images/articles/celebrando-la-creatividad-en-cadiz-hernan-cortes-honrado.png"
 author: "cadiz.is"
 lang: "en"
