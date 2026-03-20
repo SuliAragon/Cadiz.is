@@ -29,7 +29,7 @@ jobs:
         run: python scripts/generate_content.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
 
       - name: Commit y push del nuevo contenido
         run: |

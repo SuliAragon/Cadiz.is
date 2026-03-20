@@ -5,7 +5,7 @@ import requests
 from pathlib import Path
 from bs4 import BeautifulSoup
 from openai import OpenAI
-import fal_client
+import fal_client  # lee FAL_KEY del entorno automáticamente
 
 # ── Configuración ──────────────────────────────────────────────
 REPO_ROOT   = Path(__file__).parent.parent
