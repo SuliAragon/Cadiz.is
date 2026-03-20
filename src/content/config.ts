@@ -6,7 +6,7 @@ const articles = defineCollection({
     title: z.string(),
     articleSlug: z.string(),
     excerpt: z.string(),
-    category: z.enum(['fiestas', 'turismo', 'gastronomia', 'cultura']),
+    category: z.enum(['fiestas', 'turismo', 'gastronomia', 'cultura', 'agenda', 'lugares']),
     author: z.string(),
     publishedAt: z.string(),
     image: z.string().optional(),

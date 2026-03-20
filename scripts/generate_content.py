@@ -14,7 +14,7 @@ ARTICLES_EN = REPO_ROOT / "src/content/articles/en"
 IMAGES_DIR  = REPO_ROOT / "public/images/articles"
 EVENTS_FILE = REPO_ROOT / "src/data/events.json"
 
-SECTIONS = ["fiestas", "turismo", "gastronomia", "cultura"]
+SECTIONS = ["fiestas", "turismo", "gastronomia", "cultura", "agenda", "lugares"]
 
 SOURCES = [
     "https://www.diariodecadiz.es",
@@ -39,10 +39,7 @@ def articles_to_generate() -> int:
             date_str = line.split(":", 1)[1].strip().strip('"')
             last_date = datetime.date.fromisoformat(date_str[:10])
             days_missed = (datetime.date.today() - last_date).days
-            if days_missed == 0:
-                print("  Ya hay un artículo de hoy. Nada que generar.")
-                return 0
-            return min(days_missed, 7)
+            return min(max(days_missed, 1), 7)
     return 1
 
 # ── Sección rotante por último artículo ───────────────────────
@@ -64,6 +61,8 @@ def fetch_news(section: str) -> dict | None:
         "turismo":     ["turismo", "playa", "visita", "ruta", "viaje", "monumento"],
         "gastronomia": ["gastronomía", "restaurante", "cocina", "atún", "pescado", "vino"],
         "cultura":     ["cultura", "flamenco", "música", "arte", "exposición", "teatro"],
+        "agenda":      ["evento", "concierto", "feria", "mercado", "actividad", "espectáculo"],
+        "lugares":     ["lugar", "parque", "playa", "castillo", "pueblo", "ruta", "naturaleza"],
     }
     section_keywords = keywords[section]
 
