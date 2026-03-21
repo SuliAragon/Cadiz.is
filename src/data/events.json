@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T01:12:16.991633Z",
+  "lastUpdated": "2026-03-21T07:32:17.055154Z",
   "events": [
     {
       "id": "semana-santa-2026",
@@ -87,6 +87,29 @@
       },
       "startDate": "2027-04-15",
       "endDate": "2027-04-16",
+      "startTime": "12:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/festival-gastronomico-cadiz-2027.png",
+      "isAiGenerated": true
+    },
+    {
+      "id": "festival-gastronomico-cadiz-2027-0321",
+      "slug": "festival-gastronomico-cadiz-2027-0321",
+      "title": {
+        "es": "Festival Gastronómico de Cádiz 2027",
+        "en": "Gastronomic Festival of Cádiz 2027"
+      },
+      "description": {
+        "es": "Disfruta de la riqueza culinaria de Cádiz con degustaciones, talleres y actividades para toda la familia.",
+        "en": "Experience the culinary richness of Cádiz with tastings, workshops, and activities for the whole family."
+      },
+      "locationName": {
+        "es": "Parque Genovés, Cádiz",
+        "en": "Genovés Park, Cádiz"
+      },
+      "startDate": "2027-06-10",
+      "endDate": "2027-06-12",
       "startTime": "12:00",
       "category": "fiestas",
       "isFeatured": false,
