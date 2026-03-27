@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-21T07:32:17.055154Z",
+  "lastUpdated": "2026-03-27T07:59:32.297550Z",
   "events": [
     {
       "id": "semana-santa-2026",
@@ -114,6 +114,29 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/festival-gastronomico-cadiz-2027.png",
+      "isAiGenerated": true
+    },
+    {
+      "id": "festival-musica-cadiz-2026",
+      "slug": "festival-musica-cadiz-2026",
+      "title": {
+        "es": "Festival de Música de Cádiz 2026",
+        "en": "Cádiz Music Festival 2026"
+      },
+      "description": {
+        "es": "Celebra la riqueza musical de Andalucía con actuaciones de artistas locales e internacionales en escenarios emblemáticos de Cádiz.",
+        "en": "Celebrate the musical richness of Andalusia with performances by local and international artists at iconic venues in Cádiz."
+      },
+      "locationName": {
+        "es": "Teatro Falla, Cádiz",
+        "en": "Falla Theater, Cádiz"
+      },
+      "startDate": "2026-04-10",
+      "endDate": "2026-04-14",
+      "startTime": "18:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/festival-musica-cadiz-2026.png",
       "isAiGenerated": true
     }
   ]
