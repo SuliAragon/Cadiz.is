@@ -1,29 +1,6 @@
 {
-  "lastUpdated": "2026-03-27T07:59:32.297550Z",
+  "lastUpdated": "2026-04-06T08:21:44.644298Z",
   "events": [
-    {
-      "id": "semana-santa-2026",
-      "slug": "semana-santa-cadiz-2026",
-      "title": {
-        "es": "Semana Santa de Cádiz 2026",
-        "en": "Holy Week in Cádiz 2026"
-      },
-      "description": {
-        "es": "La Semana Santa gaditana es una de las más emotivas de Andalucía. Pasos, saetas y el olor a incienso que llenan cada rincón del casco histórico.",
-        "en": "Cádiz Holy Week is one of the most moving in Andalusia. Floats, saetas and the smell of incense fill every corner of the old town."
-      },
-      "locationName": {
-        "es": "Casco Histórico de Cádiz",
-        "en": "Cádiz Old Town"
-      },
-      "startDate": "2026-03-29",
-      "endDate": "2026-04-05",
-      "startTime": "18:00",
-      "category": "fiestas",
-      "isFeatured": true,
-      "image": "/images/events/semana-santa-2026.png",
-      "isAiGenerated": false
-    },
     {
       "id": "feria-jerez-2026",
       "slug": "feria-jerez-2026",
