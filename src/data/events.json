@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-06T08:21:44.644298Z",
+  "lastUpdated": "2026-04-07T08:12:10.160222Z",
   "events": [
     {
       "id": "feria-jerez-2026",
@@ -114,6 +114,29 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/festival-musica-cadiz-2026.png",
+      "isAiGenerated": true
+    },
+    {
+      "id": "fiesta-gastronomica-cadiz-2026",
+      "slug": "fiesta-gastronomica-cadiz-2026",
+      "title": {
+        "es": "Fiesta Gastronómica de Cádiz 2026",
+        "en": "Gastronomic Festival of Cádiz 2026"
+      },
+      "description": {
+        "es": "Disfruta de un fin de semana de sabores únicos en la Fiesta Gastronómica de Cádiz, donde chefs locales e internacionales deleitarán con sus creaciones.",
+        "en": "Enjoy a weekend of unique flavors at the Gastronomic Festival of Cádiz, where local and international chefs will delight with their creations."
+      },
+      "locationName": {
+        "es": "Parque Genovés, Cádiz",
+        "en": "Genovés Park, Cádiz"
+      },
+      "startDate": "2026-05-15",
+      "endDate": "2026-05-17",
+      "startTime": "12:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/fiesta-gastronomica-cadiz-2026.png",
       "isAiGenerated": true
     }
   ]
