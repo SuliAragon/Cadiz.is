@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-15T08:26:38.271607Z",
+  "lastUpdated": "2026-04-18T07:58:47.570006Z",
   "events": [
     {
       "id": "feria-jerez-2026",
@@ -114,6 +114,29 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/fiesta-gastronomica-cadiz-2026.png",
+      "isAiGenerated": true
+    },
+    {
+      "id": "fiesta-del-vino-de-jerez-2027",
+      "slug": "fiesta-del-vino-de-jerez-2027",
+      "title": {
+        "es": "Fiesta del Vino de Jerez 2027",
+        "en": "Jerez Wine Festival 2027"
+      },
+      "description": {
+        "es": "Celebra la rica tradición vinícola de Jerez con catas, música en vivo y gastronomía local.",
+        "en": "Celebrate Jerez's rich wine tradition with tastings, live music, and local cuisine."
+      },
+      "locationName": {
+        "es": "Jerez de la Frontera, Cádiz",
+        "en": "Jerez de la Frontera, Cádiz"
+      },
+      "startDate": "2027-05-10",
+      "endDate": "2027-05-13",
+      "startTime": "11:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/fiesta-del-vino-de-jerez-2027.png",
       "isAiGenerated": true
     }
   ]
