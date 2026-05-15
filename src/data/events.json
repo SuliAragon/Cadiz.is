@@ -1,29 +1,6 @@
 {
-  "lastUpdated": "2026-04-18T07:58:47.570006Z",
+  "lastUpdated": "2026-05-15T09:46:49.235841Z",
   "events": [
-    {
-      "id": "feria-jerez-2026",
-      "slug": "feria-jerez-2026",
-      "title": {
-        "es": "Feria del Caballo de Jerez 2026",
-        "en": "Jerez Horse Fair 2026"
-      },
-      "description": {
-        "es": "La Feria del Caballo de Jerez, una de las más importantes de España, llena la ciudad de flamenco, caballos y manzanilla.",
-        "en": "The Jerez Horse Fair, one of the most important in Spain, fills the city with flamenco, horses and manzanilla."
-      },
-      "locationName": {
-        "es": "Real de la Feria, Jerez de la Frontera",
-        "en": "Fairground, Jerez de la Frontera"
-      },
-      "startDate": "2026-05-07",
-      "endDate": "2026-05-14",
-      "startTime": "12:00",
-      "category": "fiestas",
-      "isFeatured": false,
-      "image": "/images/events/feria-jerez-2026.png",
-      "isAiGenerated": false
-    },
     {
       "id": "ruta-atun-2026",
       "slug": "ruta-del-atun-barbate-2026",
