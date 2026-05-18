@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-15T09:46:49.235841Z",
+  "lastUpdated": "2026-05-18T11:05:59.673216Z",
   "events": [
     {
       "id": "ruta-atun-2026",
@@ -68,29 +68,6 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/festival-gastronomico-cadiz-2027.png",
-      "isAiGenerated": true
-    },
-    {
-      "id": "fiesta-gastronomica-cadiz-2026",
-      "slug": "fiesta-gastronomica-cadiz-2026",
-      "title": {
-        "es": "Fiesta Gastronómica de Cádiz 2026",
-        "en": "Gastronomic Festival of Cádiz 2026"
-      },
-      "description": {
-        "es": "Disfruta de un fin de semana de sabores únicos en la Fiesta Gastronómica de Cádiz, donde chefs locales e internacionales deleitarán con sus creaciones.",
-        "en": "Enjoy a weekend of unique flavors at the Gastronomic Festival of Cádiz, where local and international chefs will delight with their creations."
-      },
-      "locationName": {
-        "es": "Parque Genovés, Cádiz",
-        "en": "Genovés Park, Cádiz"
-      },
-      "startDate": "2026-05-15",
-      "endDate": "2026-05-17",
-      "startTime": "12:00",
-      "category": "fiestas",
-      "isFeatured": false,
-      "image": "/images/events/fiesta-gastronomica-cadiz-2026.png",
       "isAiGenerated": true
     },
     {
