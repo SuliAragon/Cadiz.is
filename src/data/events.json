@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-18T11:05:59.673216Z",
+  "lastUpdated": "2026-05-19T10:36:28.414030Z",
   "events": [
     {
       "id": "ruta-atun-2026",
@@ -91,6 +91,29 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/fiesta-del-vino-de-jerez-2027.png",
+      "isAiGenerated": true
+    },
+    {
+      "id": "festival-del-marisco-cadiz-2027",
+      "slug": "festival-del-marisco-cadiz-2027",
+      "title": {
+        "es": "Festival del Marisco de Cádiz 2027",
+        "en": "Cádiz Seafood Festival 2027"
+      },
+      "description": {
+        "es": "Disfruta de lo mejor de la gastronomía marina con mariscos frescos y actividades culturales en un entorno único.",
+        "en": "Enjoy the best of seafood cuisine with fresh shellfish and cultural activities in a unique setting."
+      },
+      "locationName": {
+        "es": "Playa de la Victoria, Cádiz",
+        "en": "La Victoria Beach, Cádiz"
+      },
+      "startDate": "2027-06-15",
+      "endDate": "2027-06-18",
+      "startTime": "12:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/festival-del-marisco-cadiz-2027.png",
       "isAiGenerated": true
     }
   ]
