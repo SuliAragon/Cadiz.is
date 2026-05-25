@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-19T10:36:28.414030Z",
+  "lastUpdated": "2026-05-25T11:09:12.748667Z",
   "events": [
     {
       "id": "ruta-atun-2026",
@@ -114,6 +114,29 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/festival-del-marisco-cadiz-2027.png",
+      "isAiGenerated": true
+    },
+    {
+      "id": "festival-mediterraneo-2027",
+      "slug": "festival-mediterraneo-2027",
+      "title": {
+        "es": "Festival del Mediterráneo 2027",
+        "en": "Mediterranean Festival 2027"
+      },
+      "description": {
+        "es": "Celebra la cultura y gastronomía mediterránea en un festival vibrante junto al mar.",
+        "en": "Celebrate Mediterranean culture and cuisine at a vibrant seaside festival."
+      },
+      "locationName": {
+        "es": "Paseo Marítimo, Cádiz",
+        "en": "Seaside Promenade, Cádiz"
+      },
+      "startDate": "2027-06-10",
+      "endDate": "2027-06-15",
+      "startTime": "10:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/festival-mediterraneo-2027.png",
       "isAiGenerated": true
     }
   ]
