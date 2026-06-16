@@ -1,29 +1,6 @@
 {
-  "lastUpdated": "2026-05-25T11:09:12.748667Z",
+  "lastUpdated": "2026-06-16T12:10:41.512400Z",
   "events": [
-    {
-      "id": "ruta-atun-2026",
-      "slug": "ruta-del-atun-barbate-2026",
-      "title": {
-        "es": "Ruta del Atún Rojo de Barbate 2026",
-        "en": "Barbate Bluefin Tuna Route 2026"
-      },
-      "description": {
-        "es": "La almadraba de Barbate es uno de los sistemas de pesca más antiguos del mundo. Cada primavera, los restaurantes celebran el mejor atún rojo del Atlántico.",
-        "en": "The Barbate almadraba is one of the oldest fishing systems in the world. Every spring, restaurants celebrate the finest Atlantic bluefin tuna."
-      },
-      "locationName": {
-        "es": "Barbate, Cádiz",
-        "en": "Barbate, Cádiz"
-      },
-      "startDate": "2026-04-15",
-      "endDate": "2026-06-15",
-      "startTime": null,
-      "category": "gastronomia",
-      "isFeatured": false,
-      "image": "/images/events/ruta-atun-2026.png",
-      "isAiGenerated": false
-    },
     {
       "id": "festival-gastronomico-cadiz-2027",
       "slug": "festival-gastronomico-cadiz-2027",
