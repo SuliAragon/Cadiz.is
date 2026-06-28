@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T10:07:51.610785Z",
+  "lastUpdated": "2026-06-28T09:56:13.896360Z",
   "events": [
     {
       "id": "festival-gastronomico-cadiz-2027",
@@ -114,29 +114,6 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/festival-mediterraneo-2027.png",
-      "isAiGenerated": true
-    },
-    {
-      "id": "festival-gastronomico-cadiz-2026",
-      "slug": "festival-gastronomico-cadiz-2026",
-      "title": {
-        "es": "Festival Gastronómico de Cádiz 2026",
-        "en": "Gastronomic Festival of Cádiz 2026"
-      },
-      "description": {
-        "es": "Celebra la riqueza culinaria de Cádiz con degustaciones, talleres y chefs de renombre.",
-        "en": "Celebrate the culinary richness of Cádiz with tastings, workshops, and renowned chefs."
-      },
-      "locationName": {
-        "es": "Exteriores del Mercado Central de Cádiz",
-        "en": "Exteriors of the Central Market of Cádiz"
-      },
-      "startDate": "2026-06-25",
-      "endDate": "2026-06-27",
-      "startTime": "10:00",
-      "category": "fiestas",
-      "isFeatured": false,
-      "image": "/images/events/festival-gastronomico-cadiz-2026.png",
       "isAiGenerated": true
     }
   ]
