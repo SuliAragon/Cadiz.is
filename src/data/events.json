@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28T09:56:13.896360Z",
+  "lastUpdated": "2026-07-01T10:40:31.490950Z",
   "events": [
     {
       "id": "festival-gastronomico-cadiz-2027",
@@ -114,6 +114,29 @@
       "category": "fiestas",
       "isFeatured": false,
       "image": "/images/events/festival-mediterraneo-2027.png",
+      "isAiGenerated": true
+    },
+    {
+      "id": "feria-gatronomica-del-marisco-2027",
+      "slug": "feria-gatronomica-del-marisco-2027",
+      "title": {
+        "es": "Feria Gastronómica del Marisco 2027",
+        "en": "Seafood Gastronomy Fair 2027"
+      },
+      "description": {
+        "es": "Descubre la riqueza culinaria del mar en esta feria que celebra los mejores mariscos y productos del mar locales.",
+        "en": "Discover the culinary richness of the sea at this fair celebrating the finest seafood and local marine products."
+      },
+      "locationName": {
+        "es": "Recinto Ferial de Cádiz",
+        "en": "Cádiz Fairground"
+      },
+      "startDate": "2027-08-02",
+      "endDate": "2027-08-06",
+      "startTime": "12:00",
+      "category": "fiestas",
+      "isFeatured": false,
+      "image": "/images/events/feria-gatronomica-del-marisco-2027.png",
       "isAiGenerated": true
     }
   ]
