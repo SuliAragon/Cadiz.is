@@ -1,7 +1,7 @@
 ---
 title: "Discover Cádiz: A Charming and Joyful Travel Experience"
 articleSlug: "descubre-cadiz-un-viaje-turistico-lleno-de-encanto-y-alegria"
-excerpt: "Cádiz, known as the "silver cup," is one of those places that always has something new to offer. This corner of southern Spain, bathed by the Atlantic Ocean, is the perfect setting for a getaway full of culture, history, and, of course, a good dose of sunshine."
+excerpt: "Cádiz, known as the \"silver cup,\" is one of those places that always has something new to offer. This corner of southern Spain, bathed by the Atlantic Ocean, is the perfect setting for a getaway full of culture, history, and, of course, a good dose of sunshine."
 category: "turismo"
 publishedAt: "2026-10-07T14:11:54Z"
 image: "/images/articles/descubre-cadiz-un-viaje-turistico-lleno-de-encanto-y-alegria.png"

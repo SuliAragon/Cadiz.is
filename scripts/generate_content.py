@@ -189,19 +189,23 @@ def write_markdown(article: dict, image_path: str | None):
     for lang, data in [("es", article["es"]), ("en", article["en"])]:
         folder   = ARTICLES_ES if lang == "es" else ARTICLES_EN
         filepath = folder / f"{date}-{slug}.md"
-        content  = f"""---
-title: "{data['title']}"
-articleSlug: "{slug}"
-excerpt: "{data['excerpt']}"
-category: "{section}"
-publishedAt: "{publishedAt}"
-image: "{img}"
-author: "cadiz.is"
-lang: "{lang}"
----
-
-{data['body']}
-"""
+        metadata = {
+            "title": data["title"],
+            "articleSlug": slug,
+            "excerpt": data["excerpt"],
+            "category": section,
+            "publishedAt": publishedAt,
+            "image": img,
+            "author": "cadiz.is",
+            "lang": lang,
+        }
+        # JSON strings are valid YAML scalars and safely escape quotes,
+        # backslashes and newlines in generated text.
+        frontmatter = "\n".join(
+            f"{key}: {json.dumps(value, ensure_ascii=False)}"
+            for key, value in metadata.items()
+        )
+        content = f"---\n{frontmatter}\n---\n\n{data['body']}\n"
         filepath.write_text(content, encoding="utf-8")
         print(f"  Artículo escrito: {filepath.name} [{lang}]")
 

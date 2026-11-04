@@ -1,7 +1,7 @@
 ---
 title: "Descubre Vejer con Vino y se Quedó… de Tapas: Un Oasis Gastronómico"
 articleSlug: "descubre-vejer-con-vino-y-se-quedo-de-tapas"
-excerpt: "Vejer de la Frontera recibe con brazos abiertos a un nuevo templo gastronómico, donde el arte del tapeo se une con la tradición y la modernidad en "Vino y se Quedó… de Tapas"."
+excerpt: "Vejer de la Frontera recibe con brazos abiertos a un nuevo templo gastronómico, donde el arte del tapeo se une con la tradición y la modernidad en \"Vino y se Quedó… de Tapas\"."
 category: "gastronomia"
 publishedAt: "2026-08-29T12:57:24Z"
 image: "/images/articles/descubre-vejer-con-vino-y-se-quedo-de-tapas.png"

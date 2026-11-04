@@ -2,7 +2,8 @@ name: Daily Content Generator
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # 7am UTC = 8am hora española (9am en verano)
+    - cron: '0 8 * * *'
+      timezone: 'Europe/Madrid'  # 8am hora peninsular, también en verano
   workflow_dispatch:       # permite lanzarlo manualmente desde GitHub
 
 permissions:
@@ -22,6 +23,18 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias de la web
+        run: npm ci
+
+      - name: Comprobar escritura de artículos
+        run: npm test
+
       - name: Instalar dependencias Python
         run: pip install openai requests beautifulsoup4 fal-client
 
@@ -30,6 +43,9 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
+
+      - name: Validar la web antes de guardar el contenido
+        run: npm run build
 
       - name: Commit y push del nuevo contenido
         run: |

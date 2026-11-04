@@ -1,7 +1,7 @@
 ---
 title: "Discover Vejer with Wine and Stayed... for Tapas: A Gastronomic Oasis"
 articleSlug: "descubre-vejer-con-vino-y-se-quedo-de-tapas"
-excerpt: ""Vino y se Quedó… de Tapas" emerges as a new gastronomic icon in the charming white village of Vejer de la Frontera, capturing the lively essence of the Cádiz region with a culinary experience that invites guests to linger and savor with delight."
+excerpt: "\"Vino y se Quedó… de Tapas\" emerges as a new gastronomic icon in the charming white village of Vejer de la Frontera, capturing the lively essence of the Cádiz region with a culinary experience that invites guests to linger and savor with delight."
 category: "gastronomia"
 publishedAt: "2026-08-29T12:57:24Z"
 image: "/images/articles/descubre-vejer-con-vino-y-se-quedo-de-tapas.png"
